@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     // Get the Enemy Base HealthBar that can be used later onwards since we want to stop spawnning units
     // if the based is destroyed
-    public HealthSystem EnemyBaseHealth;
+    public HealthSystem enemyBaseHealth;
 
     // For now, I will set the spawnning interval to be a fixed value of 25 seconds, 
     // which means that every 25 seconds, a random unit will spawn. (Trial and error for now)
@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
         // If the based of the enemy (us in this case has been destroyed), stop spawning any more units
         // This is becuase the referece to the base has been destroyed, thus the refernce no longer points
         // to a base, which means the value becomes null.
-        if (EnemyBaseHealth == null)
+        if (enemyBaseHealth == null)
         {
             return;
         }

@@ -54,6 +54,14 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // If the based of the player (us in this case has been destroyed), stop spawning any more units
+        // This is becuase the referece to the base has been destroyed, thus the refernce no longer points
+        // to a base, which means the value becomes null.
+        if (playerBaseHealth == null)
+        {
+            return;
+        }
+        
         // For tracking if can spawn unit again
         spawnCooldownTimer -= Time.deltaTime;
 

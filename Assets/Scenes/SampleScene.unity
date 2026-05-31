@@ -3239,7 +3239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spawnPoint: {fileID: 1874513266}
-  enemyBaseHealth: {fileID: 0}
+  enemyBaseHealth: {fileID: 1338251439}
   spawnInterval: 25
 --- !u!1 &1902845017
 GameObject:

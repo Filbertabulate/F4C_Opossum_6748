@@ -207,7 +207,8 @@ public class UnitMove : MonoBehaviour
         {
             // Just for logging purposes to see if there is an ally unit in front of us within the ally 
             // collision range.
-            Debug.Log("Ally unit in front! Stopping to wait.");
+            // This debug current overload the console terminal, thus commented out for now
+            // Debug.Log("Ally unit in front! Stopping to wait.");
 
             // We should return and not move forward anymore.
             return;

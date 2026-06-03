@@ -1,5 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+// Old version
+// using UnityEngine.InputSystem;
+// We need this namespace to talk to TextMeshPro UI elements!
+using TMPro;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -30,13 +33,34 @@ public class PlayerSpawner : MonoBehaviour
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
 
-    // For our player spawnning, for now I want it to be spawn by the user pressing a keyboard key, but
-    // eventually I will create a toolbar or smthing similar for the user to press to spawn the character
-    // they want to spawn.
-    // For now, for the user to spawn a player, I will set the key to be press to be "z".
-    // public KeyCode spawnKey = KeyCode.Z;
-    // Forgo this first as it seme i need to change some setting, so I just did the old method of 
-    // keyboard.current.zKey.wasPressedThisFrame to do the spawning instead for now.
+    [Header("Economy Settings: Gold")]
+    // The amount of money you start with
+    public int currentMoney = 50;
+    // How much money you get per tick
+    public int passiveIncomeAmount = 5;
+    // How often you get money (e.g., 1 second)
+    public float incomeInterval = 1f;
+    // A timer to track when to give the next income
+    private float incomeTimer = 0f;
+
+    [Header("Economy Settings: EXP")]
+    // The amount of EXP you start with
+    public int currentExp = 0;
+    // How much EXP you get per tick
+    public int passiveExpAmount = 1;
+    // How often you get EXP (e.g., 1 second)
+    public float expInterval = 1f; 
+    // A timer to track when to give the next EXP
+    private float expTimer = 0f;
+
+    [Tooltip("Type the cost of each unit here. Index 0 = Red, Index 1 = Yellow, Index 2 = Green")]
+    public int[] unitCosts; 
+
+    [Header("UI References")]
+    // The text on screen showing your money
+    public TextMeshProUGUI moneyText;
+    // The text on screen showing your EXP
+    public TextMeshProUGUI expText;
 
     private void Awake()
     {
@@ -49,6 +73,9 @@ public class PlayerSpawner : MonoBehaviour
         // As such, I had to create a folder called Resources in the Assets directory, and then create a subfolder
         // called PlayerUnits to store all the player unit prefabs that I want to spawn in the game.
         playerUnits = Resources.LoadAll<GameObject>("PlayerUnits");
+
+        // Set the initial text on the screen at startup
+        UpdateEconomyUI();
     }
 
     // Update is called once per frame
@@ -62,55 +89,122 @@ public class PlayerSpawner : MonoBehaviour
             return;
         }
         
-        // For tracking if can spawn unit again
-        spawnCooldownTimer -= Time.deltaTime;
-
-        // If the user has selected to spawn the unit by pressing the key "z", then the methond SpawnPlayerUnit()
-        // will spawn a random unit from the resource folder of the units avaiable.
-        if (Keyboard.current.zKey.wasPressedThisFrame  && spawnCooldownTimer <= 0f)
+        // Continously tick down the cooldown timer in the background so the user can eventually spawn again
+        if (spawnCooldownTimer > 0)
         {
-            SpawnPlayerUnit();
-            spawnCooldownTimer = spawnCooldown;
+            spawnCooldownTimer -= Time.deltaTime;
+        }
+
+        // --- NEW: Passive Income Generator (Gold) ---
+        incomeTimer += Time.deltaTime;
+        if (incomeTimer >= incomeInterval)
+        {
+            currentMoney += passiveIncomeAmount; // Give the player money
+            incomeTimer = 0f; // Reset the timer
+            UpdateEconomyUI();  // Update the screen text
+        }
+
+        // --- NEW: Passive EXP Generator ---
+        expTimer += Time.deltaTime;
+        if (expTimer >= expInterval)
+        {
+            currentExp += passiveExpAmount; // Give the player EXP
+            expTimer = 0f; // Reset the timer
+            UpdateEconomyUI();  // Update the screen text
         }
     }
 
-    // Create a method call spawnPlayerUnit, where we can call this method to spawn a specific unit, 
-    // which will be useful for the player base to spawn units. (current based on time only)
-    private void SpawnPlayerUnit()
+    // Changed to PUBLIC so UI buttons can access it.
+    // Added 'int unitIndex' so the button can specify exactly WHICH unit to spawn, rather than a random one.
+    public void SpawnUnitFromUI(int unitIndex)
     {
-        // Since the playerUnits array can be empty, i.e. in the hierarchy we have not assigned any player units
-        // to the spawner folder, we should add a check to prevent errors from trying to access an element from an 
-        // empty array.
+        // Check 1: Is our base destroyed? If yes, we can't spawn.
+        if (playerBaseHealth == null) return;
+
+        // Check 2: Are we still on cooldown?
+        if (spawnCooldownTimer > 0f)
+        {
+            Debug.Log("Spawn is on cooldown!");
+            return;
+        }
+
+        // Check 3: Prevent errors if the array is empty or if the button passes a wrong number
         if (playerUnits.Length == 0)
         {
             Debug.LogWarning("No player units assigned to the spawner (Resources Folder in Assets)!");
             return;
         }
-
-        // We want to spawn a random unit from the playerUnits array, so we can use Random.Range to get a random index.
-        int randomPlayerUnit = Random.Range(0, playerUnits.Length);
-        GameObject unitToSpawn = playerUnits[randomPlayerUnit];
-
-        // Then we can instantiate the selected unit at the spawn point's position and rotation.
-        // https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
-        // Instantiate is a method that creates a copy of the given object, in this case, the unitToSpawn, 
-        // at the specified position and rotation.
-        // This way I only need to create one of that unit in the hierarchy, and I can spawn as many as I want 
-        // by instantiating it.
-        // Why I am storing the value of the spawned Unit is becuase I need to updates its spawn Order value
-        // in its UnitMove Script so that the is Ally tracking method works as indented.
-        GameObject spawnedUnit = Instantiate(unitToSpawn, spawnPoint.position, spawnPoint.rotation);
-
-        // Obtain the UnitMove script form the spawned unit, if there is.
-        UnitMove unitMove = spawnedUnit.GetComponent<UnitMove>();
-
-        // If such a script is available in this ally unit, then I will define its spawn Order value as such
-        // And increment the next spawnOrder value up by one to keep it unique, where lower spawnOrder number
-        // means the unit was spawned first
-        if (unitMove != null)
+        if (unitIndex < 0 || unitIndex >= playerUnits.Length)
         {
-            unitMove.InitialiseSpawnOrder(nextSpawnOrder);
-            nextSpawnOrder++;
+            Debug.LogWarning("Invalid unit index requested by the UI button!");
+            return;
+        }
+
+        // --- NEW: Determine the cost of the requested unit ---
+        int cost = 0;
+        // Make sure you actually typed a cost into the Unity Inspector for this unit
+        if (unitIndex < unitCosts.Length) 
+        {
+            cost = unitCosts[unitIndex];
+        }
+        else
+        {
+            Debug.LogWarning("Warning: You forgot to set the cost for unit " + unitIndex + " in the Inspector!");
+        }
+
+        // --- NEW: Check if player can afford it ---
+        if (currentMoney >= cost)
+        {
+            // Deduct the money and update the screen
+            currentMoney -= cost;
+            UpdateEconomyUI();
+
+            // We use the specific index passed by the UI button instead of Random.Range
+            GameObject unitToSpawn = playerUnits[unitIndex];
+
+            // Then we can instantiate the selected unit at the spawn point's position and rotation.
+            // https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
+            // Instantiate is a method that creates a copy of the given object, in this case, the unitToSpawn, 
+            // at the specified position and rotation.
+            // This way I only need to create one of that unit in the hierarchy, and I can spawn as many as I want 
+            // by instantiating it.
+            // Why I am storing the value of the spawned Unit is becuase I need to updates its spawn Order value
+            // in its UnitMove Script so that the is Ally tracking method works as indented.
+            GameObject spawnedUnit = Instantiate(unitToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+            // Obtain the UnitMove script form the spawned unit, if there is.
+            UnitMove unitMove = spawnedUnit.GetComponent<UnitMove>();
+
+            // If such a script is available in this ally unit, then I will define its spawn Order value as such
+            // And increment the next spawnOrder value up by one to keep it unique, where lower spawnOrder number
+            // means the unit was spawned first
+            if (unitMove != null)
+            {
+                unitMove.InitialiseSpawnOrder(nextSpawnOrder);
+                nextSpawnOrder++;
+            }
+
+            // Reset the cooldown timer so they can't instantly spam the button
+            spawnCooldownTimer = spawnCooldown;
+        }
+        else
+        {
+            // If they are broke, log it and deny the spawn!
+            Debug.Log("Not enough money! Need: " + cost + ", but you only have: " + currentMoney);
+        }
+    }
+
+    // A helper method to easily update all UI text whenever the economy changes
+    private void UpdateEconomyUI()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = "Gold: " + currentMoney.ToString();
+        }
+
+        if (expText != null)
+        {
+            expText.text = "Exp: " + currentExp.ToString();
         }
     }
 }

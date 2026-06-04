@@ -69,6 +69,13 @@ public class UnitMove : MonoBehaviour
     [Header("References")]
     public Transform groundCheck;
 
+    [Header("Ranged Combat Settings")]
+    public bool isRanged = false; 
+    public GameObject projectilePrefab; 
+    public Transform firePoint; // The spot where the projectile spawns 
+
+    private Animator animator;
+
     private void Awake()
     {
         //rb = GetComponent<Rigidbody2D>();
@@ -81,6 +88,9 @@ public class UnitMove : MonoBehaviour
         // Why i use Collider2D instead of specific values is becuase I want to be inclusive
         // for other shape, unit types that may have different collider boundaries.
         unitColliderBound = GetComponent<Collider2D>();
+
+        // Grab the Animator component attached to this unit so we can trigger animations
+        animator = GetComponent<Animator>();
 
         // Hardcoded tag assignments removed. targetTag and moveDirection are now directly
         // controlled via the Unity Inspector to allow both units to use this script dynamically.
@@ -102,10 +112,23 @@ public class UnitMove : MonoBehaviour
         // It will only stop when it reaches the target, which is either the enemy base or the enemy unit.   
         if (isAttacking)
         {
+            // Animation Logic: Stop walking, wait for attack trigger
+            if (animator != null)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+
             // If target has been killed or destroyed, we should stop attacking and start moving forward again.
             if (targetHealth == null)
             {
                 isAttacking = false;
+                
+                // Wipe the memory of the attack trigger so they don't swing at ghosts
+                if (animator != null)
+                {
+                    animator.ResetTrigger("AttackTrigger");
+                }
+                
                 return;
             }
 
@@ -135,17 +158,17 @@ public class UnitMove : MonoBehaviour
             // To ensure we trigger the attack only when the attack has finished its cooldown.
             if (attackTimer <= 0f)
             {
-                // Using the HealthSystem component of the target to call the TakeDamage method, 
-                // which will reduce the hp of the target by the unit damage amount.
-                targetHealth.TakeDamage(unitDamage);
+                // Trigger animation if it has one, otherwise attack instantly (for basic circles) 
+                if (animator != null)
+                {
+                    animator.SetTrigger("AttackTrigger");
+                }
+                else
+                {
+                    ExecuteAttack();
+                }
 
-                // For logging purposes, to see the attack has been done/executed in the console.
-                // We should see unit attacked enemy base or unit, and then we should see the damage taken and 
-                // the hp left of the target in the console.
-                Debug.Log(gameObject.name + " attacked " + targetHealth.gameObject.name);
-
-                // Start the attack cooldown since we just started attacking, in this case, it will be a
-                // 1 second cooldown before the unit can attack again.
+                // Start the attack cooldown...
                 attackTimer = attackCooldown;
             }
 
@@ -183,8 +206,20 @@ public class UnitMove : MonoBehaviour
             // This debug current overload the console terminal, thus commented out for now
             // Debug.Log("Ally unit in front! Stopping to wait.");
 
+            // Blocked by ally, switch to Idle 
+            if (animator != null)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+
             // We should return and not move forward anymore.
             return;
+        }
+
+        // Coast is clear, switch to Walk
+        if (animator != null)
+        {
+            animator.SetBool("IsMoving", true);
         }
 
         // If the unit has been deployed, it will start moving forward automatically.
@@ -477,5 +512,32 @@ public class UnitMove : MonoBehaviour
     public void InitialiseSpawnOrder(long order)
     {
         spawnOrder = order;
+    }
+
+    // This method is called by the Animation Event to deal damage exactly when the sword swings
+    public void ExecuteAttack()
+    {
+        // Safety check in case the target died while the sword was swinging
+        if (targetHealth == null) return; 
+
+        if (isRanged && projectilePrefab != null && firePoint != null)
+        {
+            // Ranged Attack: Spawn the projectile
+            GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile projScript = proj.GetComponent<Projectile>();
+            
+            if (projScript != null)
+            {
+                // Pass the unit's stats to the projectile so it knows who to hit and how hard
+                projScript.Initialize(unitDamage, targetTag, moveDirection);
+            }
+            Debug.Log(gameObject.name + " fired a projectile!");
+        }
+        else
+        {
+            // Melee Attack: Deal direct damage
+            targetHealth.TakeDamage(unitDamage);
+            Debug.Log(gameObject.name + " melee attacked " + targetHealth.gameObject.name);
+        }
     }
 }

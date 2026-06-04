@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 2
-  unitDamage: 500
+  unitDamage: 10
   attackCooldown: 1
   attackRange: 1
   allyCollisionRange: 0.5
@@ -224,6 +224,9 @@ MonoBehaviour:
   targetTag: Player
   moveDirection: -1
   groundCheck: {fileID: 5157057414110487253}
+  isRanged: 0
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
 --- !u!50 &5060604463027239730
 Rigidbody2D:
   serializedVersion: 5

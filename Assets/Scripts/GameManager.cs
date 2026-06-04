@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyBase;
 
     [Header("UI References")]
-    public GameObject gameplayUI; // The container holding your economy and spawn toolbars
+    public GameObject gameplayUI; // The container holding economy and spawn toolbars
     public GameObject victoryPanel;
     public GameObject defeatPanel;
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         // If the game is already over, stop checking
         if (gameEnded) return;
 
-        // Because your HealthSystem uses Destroy(gameObject), the base will literally become 'null' when it dies.
+        // Because HealthSystem uses Destroy(gameObject), the base will literally become 'null' when it dies.
         if (playerBase == null)
         {
             TriggerDefeat();

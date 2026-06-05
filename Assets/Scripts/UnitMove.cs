@@ -77,6 +77,13 @@ public class UnitMove : MonoBehaviour
     [Header("References")]
     public Transform groundCheck;
 
+    [Header("Ranged Combat Settings")]
+    public bool isRanged = false; 
+    public GameObject projectilePrefab; 
+    public Transform firePoint; // The spot where the projectile spawns 
+
+    private Animator animator;
+
     // Before we even start up the game, I should define the tag of the target that this unit will be attacking, 
     // which is based on the tag of the unit itself.
     private void Awake()
@@ -91,6 +98,9 @@ public class UnitMove : MonoBehaviour
         // Why i use Collider2D instead of specific values is becuase I want to be inclusive
         // for other shape, unit types that may have different collider boundaries.
         unitColliderBound = GetComponent<Collider2D>();
+
+        // Grab the Animator component attached to this unit so we can trigger animations
+        animator = GetComponent<Animator>();
 
         // Set the target tag based on the tag of the unit itself, if the unit is a player unit, 
         // then the target tag will be "Enemy", and if the unit is an enemy unit, then the target tag 
@@ -129,10 +139,23 @@ public class UnitMove : MonoBehaviour
         // It will only stop when it reaches the target, which is either the enemy base or the enemy unit.   
         if (isAttacking)
         {
+            // Animation Logic: Stop walking, wait for attack trigger
+            if (animator != null)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+            
             // If target has been killed or destroyed, we should stop attacking and start moving forward again.
             if (targetHealth == null)
             {
                 isAttacking = false;
+                                
+                // Wipe the memory of the attack trigger so they don't swing at ghosts
+                if (animator != null)
+                {
+                    animator.ResetTrigger("AttackTrigger");
+                }
+                
                 return;
             }
 
@@ -162,17 +185,17 @@ public class UnitMove : MonoBehaviour
             // To ensure we trigger the attack only when the attack has finished its cooldown.
             if (attackTimer <= 0f)
             {
-                // Using the HealthSystem component of the target to call the TakeDamage method, 
-                // which will reduce the hp of the target by the unit damage amount.
-                targetHealth.TakeDamage(unitDamage);
+                // Trigger animation if it has one, otherwise attack instantly (for basic circles) 
+                if (animator != null)
+                {
+                    animator.SetTrigger("AttackTrigger");
+                }
+                else
+                {
+                    ExecuteAttack();
+                }
 
-                // For logging purposes, to see the attack has been done/executed in the console.
-                // We should see unit attacked enemy base or unit, and then we should see the damage taken and 
-                // the hp left of the target in the console.
-                Debug.Log(gameObject.name + " attacked " + targetHealth.gameObject.name);
-
-                // Start the attack cooldown since we just started attacking, in this case, it will be a
-                // 1 second cooldown before the unit can attack again.
+                // Start the attack cooldown
                 attackTimer = attackCooldown;
             }
 
@@ -210,8 +233,20 @@ public class UnitMove : MonoBehaviour
             // This debug current overload the console terminal, thus commented out for now
             // Debug.Log("Ally unit in front! Stopping to wait.");
 
+            // Blocked by ally, switch to Idle 
+            if (animator != null)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+
             // We should return and not move forward anymore.
             return;
+        }
+
+        // Coast is clear, switch to Walk
+        if (animator != null)
+        {
+            animator.SetBool("IsMoving", true);
         }
 
         // If the unit has been deployed, it will start moving forward automatically.
@@ -237,41 +272,6 @@ public class UnitMove : MonoBehaviour
     // HealthSystem component of the enemy unit or base, which will be used to deal damage to it. 
     private HealthSystem FindEnemyInRange()
     {
-        /*
-        // We use OverlapCircleAll to check for all colliders within the attack range, 
-        // and then we check if any of them is an enemy.
-        // Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRange);
-
-        // Looping though all possible colliders that are within the attack range, and check if any of them 
-        // is an enemy unit or base.
-        foreach (Collider2D hit in hits)
-        {
-            // If the object we hit has the target tag, which means it is an enemy unit or base, 
-            // then we should return its HealthSystem component.
-            if (hit.CompareTag(targetTag))
-            {
-                // Obtain the health value from the component of the enemy unit or base that we hit, 
-                // and return it, so that we can use it to deal damage to the enemy unit or base.
-                // HealthSystem health = hit.GetComponent<HealthSystem>();
-                // This is so I can get the whole base health even though the collision is only on
-                // bottom of the tower.
-                HealthSystem health = hit.GetComponentInParent<HealthSystem>();
-
-
-                // This if else is just for logging purposes, to see if we have successfully obtained the 
-                // HealthSystem component of the enemy unit or base that we hit.
-                if (health != null)
-                {
-                    return health;
-                }
-                else
-                {
-                    Debug.LogWarning(hit.name + " has target tag but no HealthSystem!");
-                }
-            }
-        }
-        */
-
         // Since now we included the usage of SpawnOrder, we want to get the HP of the unit that
         // is Spawned first
         HealthSystem oldestEnemyUnit = FindOldestEnemyUnitInRange();
@@ -579,32 +579,37 @@ public class UnitMove : MonoBehaviour
         spawnOrder = order;
     }
 
-
-    // Method to handle collision with other objects, in this case, 
-    // we want to check if the unit has collided with an enemy unit or the enemy base.
-    // We scrape this since we want it to attack not just when colliding, but when in range.
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
+    // This method is called by the Animation Event to deal damage exactly when the sword swings
+    public void ExecuteAttack()
     {
-        // If we are colliding with an enemy then we should start attacking.
-        // Or else since Age of War is a one line attck game, if we collide with our allies, we need to
-        // stop behind them and wait for them to be destroyed or move forward, to move.
-        // Also later one we need to add it such that the unit is able to attack the enemy if it is a range
-        // unit, so it attacks the enemy unit or base when it is within the attack range.
-        if (collision.gameObject.CompareTag("Enemy"))
+        // Safety check in case the target died while the sword was swinging
+        if (targetHealth == null) return; 
+
+        if (isRanged && projectilePrefab != null && firePoint != null)
         {
-            isAttacking = true;
-            Debug.Log("Attacking enemy!");
-
-            HealthSystem targetHealth = collision.gameObject.GetComponent<HealthSystem>();
-
-            if (targetHealth != null)
+            // Ranged Attack: Spawn the projectile
+            GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Projectile projScript = proj.GetComponent<Projectile>();
+            
+            if (projScript != null)
             {
-                targetHealth.TakeDamage(unitDamage);
+                // Pass the unit's stats to the projectile so it knows who to hit and how hard
+                projScript.Initialize(unitDamage, targetTag, moveDirection);
             }
+            Debug.Log(gameObject.name + " fired a projectile!");
+        }
+        else
+        {
+            // Melee Attack: Deal direct damage
 
-            Debug.Log(gameObject.name + " hit " + collision.gameObject.name);
+            // Using the HealthSystem component of the target to call the TakeDamage method, 
+            // which will reduce the hp of the target by the unit damage amount.
+            targetHealth.TakeDamage(unitDamage);
+
+            // For logging purposes, to see the attack has been done/executed in the console.
+            // We should see unit attacked enemy base or unit, and then we should see the damage taken and 
+            // the hp left of the target in the console.
+            Debug.Log(gameObject.name + " melee attacked " + targetHealth.gameObject.name);
         }
     }
-    */
 }

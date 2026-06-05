@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 8815210437669664522}
   - component: {fileID: 8482836026023632292}
   - component: {fileID: 2764968963404395193}
+  - component: {fileID: 2615473576962154125}
   m_Layer: 7
-  m_Name: 0_RedCircle
+  m_Name: 1_Archer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,12 +31,13 @@ Transform:
   m_GameObject: {fileID: 585359228010224065}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.02, y: -3.08, z: 0}
+  m_LocalPosition: {x: -15.29, y: -4.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5587721344525899463}
   - {fileID: 1197196557589270967}
+  - {fileID: 8467907868105809963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7025329663462765604
@@ -88,7 +90,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -112,7 +114,7 @@ MonoBehaviour:
   speed: 2
   unitDamage: 10
   attackCooldown: 1
-  attackRange: 1
+  attackRange: 5
   allyCollisionRange: 0.5
   groundLayer:
     serializedVersion: 2
@@ -121,6 +123,9 @@ MonoBehaviour:
   targetTag: Enemy
   moveDirection: 1
   groundCheck: {fileID: 1197196557589270967}
+  isRanged: 1
+  projectilePrefab: {fileID: 5027497191260813189, guid: 6a529da3c21ddd642971e5349b82e9df, type: 3}
+  firePoint: {fileID: 8467907868105809963}
 --- !u!50 &8815210437669664522
 Rigidbody2D:
   serializedVersion: 5
@@ -199,6 +204,28 @@ MonoBehaviour:
   hp: 150
   maxHp: 150
   healthBar: {fileID: 5076282360255290124}
+--- !u!95 &2615473576962154125
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585359228010224065}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bbae703aa43ebcd438e21d63dd39c585, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3594303968100449941
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.04, y: 0.55}
   m_SizeDelta: {x: 1, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3175353461986112472
@@ -503,3 +530,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8970766064140581162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8467907868105809963}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8467907868105809963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970766064140581162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.502, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6932104639470730460}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 2
-  unitDamage: 10
+  unitDamage: 15
   attackCooldown: 1
   attackRange: 1
   allyCollisionRange: 0.5

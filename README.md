@@ -3,7 +3,7 @@ NUS Orbital Project for AY 25/26
 Milestone 1
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/7e4a0241-355d-45d4-ad0f-4d8ded555110" />
 
-## [DEMO] (https://filbertabulate.github.io/F4C_Opossum_6748/)
+## [DEMO](https://filbertabulate.github.io/F4C_Opossum_6748/)
 
 F4C Opossum is a classic 2D side-scrolling strategy game inspired by the mechanics of Age of War. Players are challenged to balance resource economies, spawn tactical units, and manage base defenses to conquer a dynamic enemy AI. 
 

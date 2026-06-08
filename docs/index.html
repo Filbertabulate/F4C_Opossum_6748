@@ -6,6 +6,28 @@
     <title>Unity Web Player | Orbital_2D_Age_Of_War</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: white;
+      }
+
+      #unity-container {
+        width: min(100vw, 177.78vh);
+        height: min(56.25vw, 100vh);
+        margin: auto;
+      }
+
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">

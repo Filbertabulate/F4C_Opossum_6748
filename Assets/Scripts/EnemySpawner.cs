@@ -57,6 +57,32 @@ public class EnemySpawner : MonoBehaviour
         // Loop through every single enemy type in our roster
         foreach (var enemy in enemyRoster)
         {
+            // If there is no prefab assigned for this enemy type, skip it to avoid errors
+            if (enemy.enemyPrefab == null)
+            {
+                continue;
+            }
+
+            // If the spawn interval is set to 0 or below, log a warning and skip this enemy type
+            if (enemy.spawnInterval <= 0f)
+            {
+                Debug.LogWarning(enemy.unitName + " has invalid spawn interval. Set it above 0.");
+                continue;
+            }
+
+            // Reduce this specific enemy's timer
+            enemy.currentTimer -= Time.deltaTime;
+
+            // If this specific enemy's timer hits 0, spawn it!
+            if (enemy.currentTimer <= 0f)
+            {
+                SpawnSpecificUnit(enemy.enemyPrefab);
+                enemy.currentTimer = enemy.spawnInterval;
+            }
+        }
+        /* Code broken when building in from Unity
+        foreach (var enemy in enemyRoster)
+        {
             // Reduce this specific enemy's timer
             enemy.currentTimer -= Time.deltaTime;
 
@@ -69,6 +95,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.currentTimer = enemy.spawnInterval;
             }
         }
+        */
     }
 
     private void SpawnSpecificUnit(GameObject prefabToSpawn)

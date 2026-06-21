@@ -5720,9 +5720,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6903eed5a2ce94184da5d224c0a1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  enemyRoster:
+  - unitName: Golem
+    enemyPrefab: {fileID: 1492826417063611431, guid: e6027fa3c62b6d042baa98f7d416869d, type: 3}
+    spawnInterval: 30
+    spawnAtStart: 1
+    currentTimer: 0
+  - unitName: Magic Archer
+    enemyPrefab: {fileID: 1492826417063611431, guid: f239af3f31352c5478cac93e77047967, type: 3}
+    spawnInterval: 18
+    spawnAtStart: 1
+    currentTimer: 0
+  - unitName: Wizard
+    enemyPrefab: {fileID: 1492826417063611431, guid: 346d6003d81e71f4596a3acc85df3674, type: 3}
+    spawnInterval: 10
+    spawnAtStart: 1
+    currentTimer: 0
   spawnPoint: {fileID: 1874513266}
   enemyBaseHealth: {fileID: 1338251439}
-  spawnInterval: 25
 --- !u!1 &1902845017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,12 +5968,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2560, y: 1440}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -6757,10 +6772,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Unit_Circle
       objectReference: {fileID: 0}
-    - target: {fileID: 1492826417063611431, guid: 346d6003d81e71f4596a3acc85df3674, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8692062753344777454, guid: 346d6003d81e71f4596a3acc85df3674, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.68
@@ -6801,10 +6812,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9189322256928044901, guid: 346d6003d81e71f4596a3acc85df3674, type: 3}
-      propertyPath: unitDamage
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6821,10 +6828,6 @@ PrefabInstance:
     - target: {fileID: 585359228010224065, guid: 8b1a97a0996c63d4db853d9c4f8401bf, type: 3}
       propertyPath: m_Name
       value: Player_Unit_Circle
-      objectReference: {fileID: 0}
-    - target: {fileID: 585359228010224065, guid: 8b1a97a0996c63d4db853d9c4f8401bf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6932104639470730460, guid: 8b1a97a0996c63d4db853d9c4f8401bf, type: 3}
       propertyPath: m_LocalPosition.x

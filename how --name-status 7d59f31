@@ -1,0 +1,95 @@
+[33mcommit 7d59f31ed370a826d30602d7013cdb62cc19b520[m[33m ([m[1;31morigin/Jianxi[m[33m)[m
+Author: Jianxi2003 <lijianxileo@gmail.com>
+Date:   Sat Jun 20 22:19:45 2026 +0800
+
+    Updated player and enemy units
+
+ Assets/Art/Arrow01(100x100).png.meta               |    2 [32m+[m[31m-[m
+ Assets/Art/Attack1.png                             |  Bin [31m0[m -> [32m8497[m bytes
+ Assets/Art/Attack1.png.meta                        |  344 [32m+++++[m
+ Assets/Art/Attack2.png                             |  Bin [31m0[m -> [32m8896[m bytes
+ Assets/Art/Attack2.png.meta                        |  344 [32m+++++[m
+ Assets/Art/Attack3.png                             |  Bin [31m0[m -> [32m9701[m bytes
+ Assets/Art/Attack3.png.meta                        |  370 [32m++++++[m
+ Assets/Art/Death.png                               |  Bin [31m0[m -> [32m5725[m bytes
+ Assets/Art/Death.png.meta                          |  312 [32m+++++[m
+ Assets/Art/Fall.png                                |  Bin [31m0[m -> [32m2359[m bytes
+ Assets/Art/Fall.png.meta                           |  208 [32m+++[m
+ Assets/Art/Idle.png                                |  Bin [31m0[m -> [32m6651[m bytes
+ Assets/Art/Idle.png.meta                           |  392 [32m++++++[m
+ Assets/Art/Jump.png                                |  Bin [31m0[m -> [32m2158[m bytes
+ Assets/Art/Jump.png.meta                           |  208 [32m+++[m
+ Assets/Art/Run.png                                 |  Bin [31m0[m -> [32m6010[m bytes
+ Assets/Art/Run.png.meta                            |  340 [32m+++++[m
+ Assets/Art/Take hit.png                            |  Bin [31m0[m -> [32m2633[m bytes
+ Assets/Art/Take hit.png.meta                       |  208 [32m+++[m
+ Assets/Art/spr_ArcherAttack_strip_NoBkg.png.meta   |   18 [32m+[m[31m-[m
+ Assets/Art/spr_ArcherIdle_strip_NoBkg.png.meta     |   32 [32m+[m[31m-[m
+ Assets/Art/spr_ArcherRun_strip_NoBkg.png.meta      |   32 [32m+[m[31m-[m
+ Assets/EnemyArt.meta                               |    8 [32m+[m
+ Assets/EnemyArt/Attack2.png                        |  Bin [31m0[m -> [32m17311[m bytes
+ Assets/EnemyArt/Attack2.png.meta                   |  385 [32m++++++[m
+ Assets/EnemyArt/Golem_1_attack.png                 |  Bin [31m0[m -> [32m8416[m bytes
+ Assets/EnemyArt/Golem_1_attack.png.meta            |  427 [32m+++++++[m
+ Assets/EnemyArt/Golem_1_idle.png                   |  Bin [31m0[m -> [32m2551[m bytes
+ Assets/EnemyArt/Golem_1_idle.png.meta              |  340 [32m+++++[m
+ Assets/EnemyArt/Golem_1_walk.png                   |  Bin [31m0[m -> [32m4955[m bytes
+ Assets/EnemyArt/Golem_1_walk.png.meta              |  392 [32m++++++[m
+ Assets/EnemyArt/Idle.png                           |  Bin [31m0[m -> [32m10208[m bytes
+ Assets/EnemyArt/Idle.png.meta                      |  367 [32m++++++[m
+ Assets/EnemyArt/Run.png                            |  Bin [31m0[m -> [32m10623[m bytes
+ Assets/EnemyArt/Run.png.meta                       |  361 [32m++++++[m
+ Assets/EnemyArt/projectile.png                     |  Bin [31m0[m -> [32m160[m bytes
+ Assets/EnemyArt/projectile.png.meta                |  156 [32m+++[m
+ Assets/EnemyArt/spritesheet.png                    |  Bin [31m0[m -> [32m42151[m bytes
+ Assets/EnemyArt/spritesheet.png.meta               | 1337 [32m++++++++++++++++++++[m
+ Assets/Resources/EnemyUnits/Enemy_Golem.controller |  302 [32m+++++[m
+ .../EnemyUnits/Enemy_Golem.controller.meta         |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Enemy_Golem.prefab     |  531 [32m++++++++[m
+ .../Resources/EnemyUnits/Enemy_Golem.prefab.meta   |    7 [32m+[m
+ .../EnemyUnits/Enemy_MagicArcher.controller        |  302 [32m+++++[m
+ .../EnemyUnits/Enemy_MagicArcher.controller.meta   |    8 [32m+[m
+ .../Resources/EnemyUnits/Enemy_MagicArcher.prefab  |  563 [32m+++++++++[m
+ .../EnemyUnits/Enemy_MagicArcher.prefab.meta       |    7 [32m+[m
+ .../Resources/EnemyUnits/Enemy_Wizard.controller   |  302 [32m+++++[m
+ .../EnemyUnits/Enemy_Wizard.controller.meta        |    8 [32m+[m
+ ...nemy_Unit_Circle.prefab => Enemy_Wizard.prefab} |   31 [32m+[m[31m-[m
+ ...Circle.prefab.meta => Enemy_Wizard.prefab.meta} |    0
+ Assets/Resources/EnemyUnits/Golem_Attack.anim      |  109 [32m++[m
+ Assets/Resources/EnemyUnits/Golem_Attack.anim.meta |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Golem_Idle.anim        |   93 [32m++[m
+ Assets/Resources/EnemyUnits/Golem_Idle.anim.meta   |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Golem_Walk.anim        |   99 [32m++[m
+ Assets/Resources/EnemyUnits/Golem_Walk.anim.meta   |    8 [32m+[m
+ .../Resources/EnemyUnits/Magic_Archer_Attack.anim  |   97 [32m++[m
+ .../EnemyUnits/Magic_Archer_Attack.anim.meta       |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Magic_Archer_Idle.anim |   81 [32m++[m
+ .../EnemyUnits/Magic_Archer_Idle.anim.meta         |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Magic_Archer_Walk.anim |   93 [32m++[m
+ .../EnemyUnits/Magic_Archer_Walk.anim.meta         |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Magic_Arrow.prefab     |  172 [32m+++[m
+ .../Resources/EnemyUnits/Magic_Arrow.prefab.meta   |    7 [32m+[m
+ Assets/Resources/EnemyUnits/Wizard_Attack.anim     |  100 [32m++[m
+ .../Resources/EnemyUnits/Wizard_Attack.anim.meta   |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Wizard_Idle.anim       |   93 [32m++[m
+ Assets/Resources/EnemyUnits/Wizard_Idle.anim.meta  |    8 [32m+[m
+ Assets/Resources/EnemyUnits/Wizard_Walk.anim       |   93 [32m++[m
+ Assets/Resources/EnemyUnits/Wizard_Walk.anim.meta  |    8 [32m+[m
+ .../Resources/PlayerUnits/0_Swordsman.controller   |   32 [32m+[m
+ Assets/Resources/PlayerUnits/0_Swordsman.prefab    |    2 [32m+[m[31m-[m
+ Assets/Resources/PlayerUnits/1_Archer.controller   |   32 [32m+[m
+ Assets/Resources/PlayerUnits/1_Archer.prefab       |    2 [32m+[m[31m-[m
+ .../PlayerUnits/2_MagicSwordsman.controller        |  302 [32m+++++[m
+ .../PlayerUnits/2_MagicSwordsman.controller.meta   |    8 [32m+[m
+ ..._GreenCircle.prefab => 2_MagicSwordsman.prefab} |   34 [32m+[m[31m-[m
+ ...le.prefab.meta => 2_MagicSwordsman.prefab.meta} |    0
+ .../PlayerUnits/MagicSwordsman_Attack.anim         |  147 [32m+++[m
+ .../PlayerUnits/MagicSwordsman_Attack.anim.meta    |    8 [32m+[m
+ .../Resources/PlayerUnits/MagicSwordsman_Idle.anim |   99 [32m++[m
+ .../PlayerUnits/MagicSwordsman_Idle.anim.meta      |    8 [32m+[m
+ .../Resources/PlayerUnits/MagicSwordsman_Walk.anim |   93 [32m++[m
+ .../PlayerUnits/MagicSwordsman_Walk.anim.meta      |    8 [32m+[m
+ Assets/Scenes/SampleScene.unity                    |   17 [32m+[m[31m-[m
+ Assets/Scripts/EnemySpawner.cs                     |  144 [32m+[m[31m--[m
+ Assets/Scripts/UnitMove.cs                         |    3 [32m+[m
+ 88 files changed, 10562 insertions(+), 138 deletions(-)

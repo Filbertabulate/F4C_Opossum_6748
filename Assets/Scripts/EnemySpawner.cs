@@ -1,4 +1,100 @@
 using UnityEngine;
+using System.Collections.Generic;
+
+// We create a custom class so we can group the prefab and its specific spawn timer together in the Inspector
+[System.Serializable]
+public class EnemyType
+{
+    public string unitName; // e.g., "Golem" or "Wizard"
+    public GameObject enemyPrefab;
+    
+    [Tooltip("How many seconds between each spawn of this specific unit?")]
+    public float spawnInterval; 
+    
+    // --- NEW: A checkbox to decide if they spawn instantly on game start! ---
+    [Tooltip("Check this box if this unit should spawn immediately when the level begins.")]
+    public bool spawnAtStart; 
+
+    // We hide this in the Inspector because the script handles the math in the background
+    [HideInInspector] public float currentTimer; 
+}
+
+public class EnemySpawner : MonoBehaviour
+{
+    [Header("Enemy Roster")]
+    [Tooltip("Add your Wizard, Magic Archer, and Golem here with their specific timers!")]
+    public EnemyType[] enemyRoster;
+
+    [Header("Spawn Settings")]
+    public Transform spawnPoint;
+    public HealthSystem enemyBaseHealth;
+
+    private long nextSpawnOrder = 0;
+
+    private void Start()
+    {
+        // Loop through the roster to set up their initial timers
+        foreach (var enemy in enemyRoster)
+        {
+            if (enemy.spawnAtStart)
+            {
+                // If the box is checked, set timer to 0 so they spawn on the very first frame
+                enemy.currentTimer = 0f; 
+            }
+            else
+            {
+                // If unchecked, they have to wait out their full cooldown before appearing
+                enemy.currentTimer = enemy.spawnInterval; 
+            }
+        }
+    }
+
+    private void Update()
+    {
+        // If the enemy base is destroyed, stop spawning units
+        if (enemyBaseHealth == null) return;
+
+        // Loop through every single enemy type in our roster
+        foreach (var enemy in enemyRoster)
+        {
+            // Reduce this specific enemy's timer
+            enemy.currentTimer -= Time.deltaTime;
+
+            // If this specific enemy's timer hits 0, spawn it!
+            if (enemy.currentTimer <= 0f)
+            {
+                SpawnSpecificUnit(enemy.enemyPrefab);
+                
+                // Reset the timer back to this unit's unique interval
+                enemy.currentTimer = enemy.spawnInterval;
+            }
+        }
+    }
+
+    private void SpawnSpecificUnit(GameObject prefabToSpawn)
+    {
+        if (prefabToSpawn == null)
+        {
+            Debug.LogWarning("An enemy prefab is missing from the spawner roster!");
+            return;
+        }
+
+        // Instantiate the specific unit
+        GameObject spawnedUnit = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+        UnitMove unitMove = spawnedUnit.GetComponent<UnitMove>();
+
+        // Apply the spawn order
+        if (unitMove != null)
+        {
+            unitMove.InitialiseSpawnOrder(nextSpawnOrder);
+            nextSpawnOrder++;
+        }
+    }
+}
+
+
+/* Old Mechnics
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -117,3 +213,4 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
+*/

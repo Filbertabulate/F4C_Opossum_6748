@@ -154,6 +154,9 @@ public class UnitMove : MonoBehaviour
                 if (animator != null)
                 {
                     animator.ResetTrigger("AttackTrigger");
+
+                    // Fire the emergency stop trigger
+                    animator.SetTrigger("CancelAttack");
                 }
                 
                 return;

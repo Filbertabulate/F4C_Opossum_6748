@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8692062753344777454
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 1492826417063611431}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.81505, y: -3.60702, z: 0}
+  m_LocalPosition: {x: 19.68, y: -8.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 2
-  unitDamage: 10
+  unitDamage: 8
   attackCooldown: 1
   attackRange: 1
   allyCollisionRange: 0.5
@@ -221,8 +221,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
-  targetTag: Player
-  moveDirection: -1
   groundCheck: {fileID: 5157057414110487253}
   isRanged: 0
   projectilePrefab: {fileID: 0}

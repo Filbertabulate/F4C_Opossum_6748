@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -104,8 +104,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "1920px";
-        canvas.style.height = "1080px";
+        // canvas.style.width = "1920px";
+        // canvas.style.height = "1080px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
@@ -113,6 +113,30 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+
+        function resizeCanvas() {
+          let container = document.getElementById("unity-container");
+
+          let windowWidth = window.innerWidth;
+          let windowHeight = window.innerHeight - 60;
+
+          let aspect = 16 / 9;
+
+          let width = windowWidth;
+          let height = width / aspect;
+
+          if (height > windowHeight) {
+              height = windowHeight;
+              width = height * aspect;
+          }
+
+          canvas.style.width = width + "px";
+          canvas.style.height = height + "px";
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {

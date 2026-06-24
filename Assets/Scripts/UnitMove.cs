@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 
 public class UnitMove : MonoBehaviour
 {
+    [Header("Character Stats")]
     // Set up the speed of the unit/ball to be moving automatically, value obtain via trial and error.
     public float speed = 1f;
 
@@ -21,6 +22,8 @@ public class UnitMove : MonoBehaviour
     // destroyed or move forward, to move.
     // Value obtain via trial and error
     public float allyCollisionRange = 0.5f;
+    // This is for tracking the range of the ally unit in front of us, so that we can move at the same speed as them, to prevent animation issues.
+    public float speedTrackingRange = 2f;
 
     // Set up the ground layer, which will be used to check if the unit has landed on the ground or not,
     // for deployment purposes.
@@ -38,6 +41,11 @@ public class UnitMove : MonoBehaviour
     private bool hasDeployed = false;
     // Tracker to know if the unit is currently attacking or not
     private bool isAttacking = false;
+    // For tracking of the unit current movement speed, so that we can use it for referecing to ensure all units if in a row moves at the same speed
+    private float currentMoveSpeed = 0f;
+
+    // For memory cashing of the ally unit in front of us, so that we can move at the same speed as them, to prevent animation issues.
+    private UnitMove trackedFrontAlly = null;
 
     // This is for allowing the script to be used for both player and enemy units, since
     // I will have this field to differentiate the target of this current unit, based on the
@@ -130,6 +138,8 @@ public class UnitMove : MonoBehaviour
         if (!hasDeployed)
         {
             hasDeployed = IsGrounded();
+            // Update the currentMoveSpeed to 0f since the unit is not moving yet, as it is still falling down from the sky.
+            currentMoveSpeed = 0f;
             // the return is here to pre-stop the update loop till we know the troop
             // has been successfully deployed, only which the rest of the code will be executed.
             return;
@@ -139,6 +149,9 @@ public class UnitMove : MonoBehaviour
         // It will only stop when it reaches the target, which is either the enemy base or the enemy unit.   
         if (isAttacking)
         {
+            // Update the currentMoveSpeed to 0f since the unit is not moving forward anymore, as it is currently attacking the target.
+            currentMoveSpeed = 0f;
+            
             // Animation Logic: Stop walking, wait for attack trigger
             if (animator != null)
             {
@@ -215,6 +228,10 @@ public class UnitMove : MonoBehaviour
         if (enemyInRange != null)
         {
             isAttacking = true;
+
+            // Update the currentMoveSpeed to 0f since the unit is not moving forward anymore, as it is currently attacking the target.
+            currentMoveSpeed = 0f;
+
             // To store the enemy target we found, so that the update loop still has memory of the target we are attacking, 
             // since the FindEnemyInRange method is only used to find if there is any enemy unit or base within the attack range
             targetHealth = enemyInRange;
@@ -227,29 +244,54 @@ public class UnitMove : MonoBehaviour
             return;
         }
 
-        // Now if there is an ally unit in front of us within the ally collision range, 
-        // we should stop and wait for them to be destroyed or move forward, to move.
-        if (isAllyInFront())
-        {
-            // Just for logging purposes to see if there is an ally unit in front of us within the ally 
-            // collision range.
-            // This debug current overload the console terminal, thus commented out for now
-            // Debug.Log("Ally unit in front! Stopping to wait.");
+        // Now we change the ally collision detection to be more dynamic, so we need to get the proposed speed, we can use the GetAdjustedSpeed method to get the 
+        // speed of the ally unit in front of us, if there is one, and then we can use that speed to move forward, so that we can move at the same speed as the ally unit 
+        // in front of us, to prevent animation issues.
+        
+        // First we try an obtain the ally unit in front of us, if there is one, we will use its speed to move forward, otherwise we will use our own speed to move forward.
+        UnitMove blockingAlly = GetAllyInFront();
 
-            // Blocked by ally, switch to Idle 
+        // If there is an ally unit infront of us
+        if (blockingAlly != null)
+        {
+            // Update the private field to remember the ally unit in front of us, so that we can move at the same speed as them, to prevent animation issues.
+            trackedFrontAlly = blockingAlly;
+            // Since there is an ally unit in front of us, we should stop, thus set currentMoveSpeed to 0f, and not move forward anymore,
+            // until the ally unit in front of us is destroyed or moves forward.
+            currentMoveSpeed = 0f;
+
+            // This is to change the current unit animation to idle, since we are not moving forward anymore.
             if (animator != null)
             {
                 animator.SetBool("IsMoving", false);
             }
 
-            // We should return and not move forward anymore.
+            // We do not want the remainder code below to execute since we are not moving forward anymore.
             return;
         }
 
-        // Coast is clear, switch to Walk
+        // If we cannot see the unit in front of us anymore, firstly let see if there was originally an ally unit in front of us,
+        // such that if there was one, we will check if it is still alive, if it is not, we will set the trackedFrontAlly to null, and move forward again.
+        // This is so that we move at the speed that is at most ther max speed, or lesser to ensure there is no animation issues
+        // In essence this if statement is to track that both the memory unit and the current ally unit we see is still in front of us,
+        // in which we change the movement speed accordingly
+        if (trackedFrontAlly != null && GetTrackedAllyInFront() != null)
+        {
+            currentMoveSpeed = Mathf.Min(speed, trackedFrontAlly.GetCurrentMoveSpeed());
+        }
+        // Also need to have the condition if there is no trackFrontAlly being seen, the currentMoveSpped has to be the original unit speed value
+        // And we forget the original tracked unit
+        else
+        {
+            trackedFrontAlly = null;
+            currentMoveSpeed = speed;
+        }
+
+        // Coast is clear, switch to Walk, also to prevent inconsistent animation issues, i.e. to say when we only start the movement animation
+        // if the current unit move speed is greater than 0.01f, which is a small value to prevent floating point errors, and not when it is 0f, which is the default value.
         if (animator != null)
         {
-            animator.SetBool("IsMoving", true);
+            animator.SetBool("IsMoving", currentMoveSpeed > 0.01f);
         }
 
         // If the unit has been deployed, it will start moving forward automatically.
@@ -260,9 +302,15 @@ public class UnitMove : MonoBehaviour
         // Now I need to add the move direction to the movement, since for player units, 
         // they should be moving towards the right, which is the positive x direction, 
         // and for enemy units, they should be moving towards the left, which is the negative x direction.
-        transform.position += Vector3.right * moveDirection * speed * Time.deltaTime;
+        transform.position += Vector3.right * moveDirection * currentMoveSpeed * Time.deltaTime;
     }
-    
+
+    // Getter method for currentMoveSpeed value as we dont want other classes to access the value directly
+    public float GetCurrentMoveSpeed()
+    {
+        return currentMoveSpeed;
+    }
+        
     // Method to check if the unit is grounded, which will be used to determine if the unit can move forward
     // or not
     private bool IsGrounded()
@@ -322,7 +370,7 @@ public class UnitMove : MonoBehaviour
                       |       |
         */
         Vector2 boxCenter = (Vector2)unitColliderBound.bounds.center 
-                            + Vector2.right * moveDirection * (frontOffSet + attackRange) / 2f;
+                            + Vector2.right * moveDirection * (frontOffSet + attackRange / 2f);
 
         
         // Now we define the dimensions of the detection box, i.e. our target area.
@@ -482,7 +530,10 @@ public class UnitMove : MonoBehaviour
     * Also later one we need to add it such that the unit is able to attack the enemy if it is a range unit, 
     * so it attacks the enemy unit or base when it is within the attack range.
     */
-    private bool isAllyInFront()
+    // NOTE: DID Changes from isAllyInFront to GetAllyInFront, since I want to know if there is a unit infront of us
+    // what is their speed, so we move according to the slower unit in front of us, thus we need to return the UnitMove script of the ally in front of us
+    // Of cuz, if there is no unit in front of us, we return null, and we can move at our own speed.
+    private UnitMove GetAllyInFront()
     {
         // This is to check if there is an ally unit in front of us within the ally collision range,
         // where we use vector2.right * moveDirection to check in the direction of the unit movement, 
@@ -528,6 +579,14 @@ public class UnitMove : MonoBehaviour
         RaycastHit2D[] allyHit = Physics2D.RaycastAll(rayStart, direction, allyCollisionRange, 
                                                       1 << allyLayer);
 
+        // Now I need to track the closest ally unit in front of us, so that we can move at the same speed as them, to prevent animation issues.
+        // Since raycast only detects allys in a range, where it might not be the shortest distance unit correctly, there could be buggy animations
+        // since we are not detecting the unit that is truly in front of us, thus we need to track the closest ally unit in front of us, 
+        // so that we can move at the same speed as them, to prevent animation issues.
+        UnitMove closestAlly = null;
+        // Set the max distance first, cuz I know the map size makes it impossible for any unit to be further than infinity distance.
+        float closestDistance = Mathf.Infinity;
+
         // Going through all the objects that was picked up by the raycast
         foreach (RaycastHit2D hit in allyHit)
         {
@@ -564,15 +623,67 @@ public class UnitMove : MonoBehaviour
             // item/unit flagged by the ray.
             if (allyUnit.spawnOrder >= spawnOrder) continue;
 
+            // Else if the spawn order is less that our current unit, we update the distance if needed.
+            if (hit.distance < closestDistance)
+            {
+                closestDistance = hit.distance;
+                closestAlly = allyUnit;
+            }
+
             // Comment this out first cuz it is overloading the logs
             // Debug.Log("Ally in front: " + hit.collider.name);
             // Or else since the item in front of us is our ally and was spawn earlier, we return true.
             // as there is an ally in front of us.
-            return true;
+            // We need to access the allyUnit speed so we can change the current unit speed to match the ally unit in front of us, so we can move at the same speed as them.
+            // return allyUnit;
         }
 
-        // Else return false, meaning no ally unit in front of us within the ally collision range.
-        return false;
+        // return the closest ally unit in front of us, if there is one, otherwise return null.
+        return closestAlly;
+    }
+
+    private UnitMove GetTrackedAllyInFront()
+    {
+        // I only wnat the speed of the current unit to change onliy if it has noted/tracked there is an ally in front, which only
+        // happens when it has to stop the first time.
+        if (trackedFrontAlly == null) 
+        {
+            return null;
+        }
+        
+        // Same configurations as the GetAllyInFront method, but this time we are only checking if the trackedFrontAlly is still in front of us, 
+        // and if it is, we return it, otherwise we return null.
+        Vector2 direction = Vector2.right * moveDirection;
+        float frontOffSet = unitColliderBound.bounds.extents.x;
+        Vector2 rayStart = (Vector2)transform.position + direction * frontOffSet;
+
+        // Instead of using the allyCollisionRange, we will use a larger range to check if the trackedFrontAlly is still in front of us,
+        // thay way we can ensure that we are not too close to the trackedFrontAlly, and we can move at the same speed as them, to prevent animation issues.
+        Debug.DrawRay(rayStart, direction * speedTrackingRange, Color.yellow);
+
+        RaycastHit2D[] allyHit = Physics2D.RaycastAll(rayStart, direction, speedTrackingRange,
+                                                      1 << allyLayer);
+
+
+        // Same raycast scanning idea as above.
+        foreach (RaycastHit2D hit in allyHit)
+        {
+            if (hit.collider == null) continue;
+            if (hit.collider.transform.root == transform.root) continue;
+
+            UnitMove allyUnit = hit.collider.GetComponentInParent<UnitMove>();
+
+            if (allyUnit == null) continue;
+
+            // Only reutrns the unit if the unit we remember is still in front of us, otherwise we return null.
+            if (allyUnit == trackedFrontAlly)
+            {
+                return allyUnit;
+            }
+        }
+
+         // Else return null, meaning no ally unit in front of us within the ally detection range.
+        return null;
     }
 
     // Setter method for spawnOrder value cuz we dont want other classes to directly access the value

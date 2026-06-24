@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8482836026023632292}
   - component: {fileID: 2764968963404395193}
   - component: {fileID: 2197196405984888463}
+  - component: {fileID: 4183188831165557059}
   m_Layer: 7
   m_Name: 0_Swordsman
   m_TagString: Player
@@ -88,8 +89,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  m_Sprite: {fileID: -3868812660829053132, guid: 985ac4f62e03e5045bed1ce567b91996, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,8 +120,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
-  targetTag: Enemy
-  moveDirection: 1
   groundCheck: {fileID: 1197196557589270967}
   isRanged: 0
   projectilePrefab: {fileID: 0}
@@ -225,6 +224,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &4183188831165557059
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585359228010224065}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &3594303968100449941
 GameObject:
   m_ObjectHideFlags: 0

@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: abf821ba9354ba543ae6f0c86083971a, type: 3}
   m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -222,8 +222,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
-  targetTag: Player
-  moveDirection: -1
   groundCheck: {fileID: 5157057414110487253}
   isRanged: 0
   projectilePrefab: {fileID: 0}

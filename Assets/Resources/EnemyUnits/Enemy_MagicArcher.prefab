@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8020143640844766479, guid: 10db228a44da6014ba13d7787f2e975c, type: 3}
   m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 2
-  unitDamage: 10
+  unitDamage: 15
   attackCooldown: 1
   attackRange: 5
   allyCollisionRange: 0.5
@@ -223,8 +223,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
-  targetTag: Player
-  moveDirection: -1
   groundCheck: {fileID: 5157057414110487253}
   isRanged: 1
   projectilePrefab: {fileID: 6886860799359275119, guid: d7dc6258ca86c7640a76e10330181397, type: 3}
@@ -304,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  hp: 100
-  maxHp: 100
+  hp: 125
+  maxHp: 125
   healthBar: {fileID: 1278512921498599606}
 --- !u!95 &4516076816434404299
 Animator:

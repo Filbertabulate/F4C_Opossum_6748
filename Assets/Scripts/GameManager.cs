@@ -71,12 +71,14 @@ public class GameManager : MonoBehaviour
     }
 
     // This method needs to be PUBLIC so the "Play Again" buttons can trigger it
-    public void RestartGame()
+    // Update it to return the MainMenu method
+    public void ReturnToMainMenu()
     {
         // Unfreeze time before reloading, otherwise the new game will start frozen!
         Time.timeScale = 1f; 
         
-        // Reloads the currently active scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Load Back the main Menu Scene
+        LevelManager.Instance.LoadScene("Main_Menu","CrossFade");
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

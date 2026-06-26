@@ -7,4 +7,4 @@
 [Uu]ser[Ss]ettings/
 .vs/
 !docs/Build/
-!docs/Build/**
+!docs/Build/***.psd

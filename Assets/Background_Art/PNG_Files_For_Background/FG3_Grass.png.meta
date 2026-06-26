@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 788364134682234408ddab92f40655b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2276621702651358733
+    second: FG3_Grass_0
+  - first:
+      213: 5081219977074287471
+    second: FG3_Grass_1
+  - first:
+      213: -9122921432587417431
+    second: FG3_Grass_2
+  - first:
+      213: 4045093702338807988
+    second: FG3_Grass_3
+  - first:
+      213: -7315321526125043167
+    second: FG3_Grass_4
+  - first:
+      213: -2717569437877141433
+    second: FG3_Grass_5
+  - first:
+      213: -4934355907978083913
+    second: FG3_Grass_6
+  - first:
+      213: -8074474488876833580
+    second: FG3_Grass_7
+  - first:
+      213: -1521879397951797550
+    second: FG3_Grass_8
+  - first:
+      213: -5556142174384911112
+    second: FG3_Grass_9
+  - first:
+      213: 2450458373783174474
+    second: FG3_Grass_10
+  - first:
+      213: 2795840825624067371
+    second: FG3_Grass_11
+  - first:
+      213: -2425649622191231706
+    second: FG3_Grass_12
+  - first:
+      213: -8947822537289432096
+    second: FG3_Grass_13
+  - first:
+      213: -2827561809241847346
+    second: FG3_Grass_14
+  - first:
+      213: 5381380482408466976
+    second: FG3_Grass_15
+  - first:
+      213: -7225835484083909257
+    second: FG3_Grass_16
+  - first:
+      213: -1462161478909295625
+    second: FG3_Grass_17
+  - first:
+      213: -1202097893390160728
+    second: FG3_Grass_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FG3_Grass_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1284
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0eaa72606f289f10800000000000000
+      internalID: 2276621702651358733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_1
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 691
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63a12fc5ae148640800000000000000
+      internalID: 5081219977074287471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_2
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 0
+        width: 2051
+        height: 1228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a844d8da4fd46180800000000000000
+      internalID: -9122921432587417431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_3
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 0
+        width: 259
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8031b5a4f032830800000000000000
+      internalID: 4045093702338807988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_4
+      rect:
+        serializedVersion: 2
+        x: 4986
+        y: 391
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1226c8984d1ca7a90800000000000000
+      internalID: -7315321526125043167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_5
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 0
+        width: 107
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74000ea9ef0494ad0800000000000000
+      internalID: -2717569437877141433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_6
+      rect:
+        serializedVersion: 2
+        x: 2361
+        y: 254
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1cd9de175a58bb0800000000000000
+      internalID: -4934355907978083913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_7
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 0
+        width: 90
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4ea869b34b1ff80800000000000000
+      internalID: -8074474488876833580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_8
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 0
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6091630c231eae0800000000000000
+      internalID: -1521879397951797550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_9
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 0
+        width: 153
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc883e412e94e2b0800000000000000
+      internalID: -5556142174384911112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_10
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 0
+        width: 90
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d3a3a68e6c10220800000000000000
+      internalID: 2450458373783174474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_11
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 0
+        width: 86
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d7bdbfa62dcc620800000000000000
+      internalID: 2795840825624067371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_12
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 0
+        width: 54
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d2bbf258c565ed0800000000000000
+      internalID: -2425649622191231706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_13
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e301a75fc2f2d380800000000000000
+      internalID: -8947822537289432096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_14
+      rect:
+        serializedVersion: 2
+        x: 2662
+        y: 0
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9cdabf38b72c8d0800000000000000
+      internalID: -2827561809241847346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_15
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 0
+        width: 68
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02a4d2779018eaa40800000000000000
+      internalID: 5381380482408466976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_16
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 0
+        width: 59
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d04cd49eca8bb90800000000000000
+      internalID: -7225835484083909257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_17
+      rect:
+        serializedVersion: 2
+        x: 4941
+        y: 0
+        width: 122
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f30a5db1eb55bbe0800000000000000
+      internalID: -1462161478909295625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FG3_Grass_18
+      rect:
+        serializedVersion: 2
+        x: 5084
+        y: 0
+        width: 109
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aceb3fb55a415fe0800000000000000
+      internalID: -1202097893390160728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FG3_Grass_0: 2276621702651358733
+      FG3_Grass_1: 5081219977074287471
+      FG3_Grass_10: 2450458373783174474
+      FG3_Grass_11: 2795840825624067371
+      FG3_Grass_12: -2425649622191231706
+      FG3_Grass_13: -8947822537289432096
+      FG3_Grass_14: -2827561809241847346
+      FG3_Grass_15: 5381380482408466976
+      FG3_Grass_16: -7225835484083909257
+      FG3_Grass_17: -1462161478909295625
+      FG3_Grass_18: -1202097893390160728
+      FG3_Grass_2: -9122921432587417431
+      FG3_Grass_3: 4045093702338807988
+      FG3_Grass_4: -7315321526125043167
+      FG3_Grass_5: -2717569437877141433
+      FG3_Grass_6: -4934355907978083913
+      FG3_Grass_7: -8074474488876833580
+      FG3_Grass_8: -1521879397951797550
+      FG3_Grass_9: -5556142174384911112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

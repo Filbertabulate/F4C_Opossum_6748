@@ -199,12 +199,16 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (moneyText != null)
         {
-            moneyText.text = "Gold: " + currentMoney.ToString();
+            // No Need to show Gold Text anymore
+            moneyText.text = currentMoney.ToString();
+            // moneyText.text = "Gold: " + currentMoney.ToString();
         }
 
         if (expText != null)
         {
-            expText.text = "Exp: " + currentExp.ToString();
+            // No need to show "Exp: " text anymore
+            expText.text = currentExp.ToString();
+            // expText.text = "Exp: " + currentExp.ToString();
         }
     }
 }

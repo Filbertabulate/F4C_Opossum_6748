@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         // Only one instance of this is allowed at any point in time
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
@@ -47,6 +47,24 @@ public class SoundManager : MonoBehaviour
     // Take in the soundName, and play the audio of the sound effect stright away based on the soundName.
     public void PlaySound2D(string soundName)
     {
-        sfx2DSource.PlayOneShot(sfxLibrary.GetClipFromName(soundName));
+        // Incase the manager is not set up correctly, no sound source has been givne to the script yet
+        if (sfx2DSource == null || sfxLibrary == null)
+        {
+            Debug.LogWarning("SoundManager missing AudioSource or SoundLibrary");
+            return;
+        }
+
+        // Else lets try and obtain the audio clip based on the sound name
+        AudioClip clip = sfxLibrary.GetClipFromName(soundName);
+
+        // Just for debugging purpose in case the soundName the user key in is invalid.
+        if (clip == null)
+        {
+            Debug.LogWarning("No SFX found with name: " + soundName);
+            return;
+        }
+        
+        // If not play the clip
+        sfx2DSource.PlayOneShot(clip);
     }
 }

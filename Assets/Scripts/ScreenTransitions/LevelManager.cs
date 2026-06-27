@@ -93,8 +93,62 @@ public class LevelManager : MonoBehaviour
         // Activate the scene, i.e. to show the users the next scene
         scene.allowSceneActivation = true;
 
+        // Just to ensure scene is indeed loaded before moving to the new scene, since we dont want
+        // breakages between scenes
+        while (!scene.isDone)
+        {
+            yield return null;
+        }
+
         // Remove the progress bar from being shown 
         progressBar.gameObject.SetActive(false);
+ 
+        // To complete the transition out animation
+        yield return transition.AnimateTransitionOut();
+    }
+
+    // Create Another method to do the transistion, but this time there is no Loading Bar
+    public void LoadSceneNoLoadingBar(string sceneName, string transitionName)
+    {
+        StartCoroutine(LoadSceneNoLoadingBarAsync(sceneName, transitionName));
+    }
+
+    private IEnumerator LoadSceneNoLoadingBarAsync(string sceneName, string transitionName)
+    {
+        // A simple for loop, but using the Linq to make it one line.
+        // What this is do is essentially accessing the transisitons array, looping through
+        // all the elements in the array, and finding the trasition name in the array that
+        // matchs the transitionName we are declaring for the Coroutine
+        // It then return the screen transition that we are looking for
+        SceneTransition transition = transitions.FirstOrDefault(t => t.name == transitionName);
+ 
+        // For error catching purposes, in case we get like no transition name found by mistake
+        if (transition == null)
+        {
+            Debug.LogError("Transition not found: " + transitionName);
+            yield break;
+        }
+
+        // Load the scene that was passed in parallel
+        AsyncOperation scene = SceneManager.LoadSceneAsync(sceneName);
+        // We set this to false so that Unity does not immediately activite the scene once it finishes loading
+        // but rather when we tell it to do so.
+        scene.allowSceneActivation = false;
+ 
+        // We wait for the animation to finish before progressing to the new line
+        yield return transition.AnimateTransitionIn();
+ 
+        yield return new WaitForSeconds(1f);
+ 
+        // Activate the scene, i.e. to show the users the next scene
+        scene.allowSceneActivation = true;
+
+        // Make sure we dont transition out too fast, ensure that the scene is fully build then we "load"
+        // that scene
+        while (!scene.isDone)
+        {
+            yield return null;
+        }
  
         // To complete the transition out animation
         yield return transition.AnimateTransitionOut();

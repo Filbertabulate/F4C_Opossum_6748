@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="280" height="280" alt="F4C_Oppossum_Logo" src="https://github.com/user-attachments/assets/f5b06686-7e2c-4ff1-ade8-ea2b8bd59d89" />
+  <img width="280" height="280" alt="F4C_Oppossum_Logo" src="https://github.com/user-attachments/assets/758f7c49-c60c-4e5d-a5a9-c731ddcda45b" />
 </p>
 
 <h1 align="center">F4C Opossum</h1>

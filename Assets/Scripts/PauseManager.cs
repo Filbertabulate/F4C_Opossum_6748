@@ -53,7 +53,16 @@ public class PauseManager : MonoBehaviour
         // Time.timeScale is a global value and persists across scene loads, therefore, 
         // without resetting it, the next scene would remain paused.
         Time.timeScale = 1f;
-        LevelManager.Instance.LoadSceneNoLoadingBar("Main_Menu", "CrossFade");
+        if (LevelManager.Instance != null)
+        {
+            LevelManager.Instance.LoadSceneNoLoadingBar("Main_Menu", "CrossFade");
+        }
+        // For scenarios where we start at game scene for testing
+        else
+        {
+            Debug.LogWarning("LevelManager missing, loading Main_Menu directly.");
+            SceneManager.LoadScene("Main_Menu");
+        }
     }
 
     // In the Pause Manager, the method created allows us to play the click and Hover Sounds that are found

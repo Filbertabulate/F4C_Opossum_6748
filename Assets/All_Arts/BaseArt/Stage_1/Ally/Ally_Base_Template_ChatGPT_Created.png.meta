@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 646850f00eb7f554492b9b9f293c5509
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4160117577380202276
+    second: Ally_Base_Template_ChatGPT_Created_0
+  - first:
+      213: -6973489976349850830
+    second: Ally_Base_Template_ChatGPT_Created_1
+  - first:
+      213: 4417668269776676139
+    second: Ally_Base_Template_ChatGPT_Created_2
+  - first:
+      213: 7763759194934401516
+    second: Ally_Base_Template_ChatGPT_Created_3
+  - first:
+      213: -3088390245925577070
+    second: Ally_Base_Template_ChatGPT_Created_4
+  - first:
+      213: 2660734767187258974
+    second: Ally_Base_Template_ChatGPT_Created_5
+  - first:
+      213: 6746493157967276993
+    second: Ally_Base_Template_ChatGPT_Created_6
+  - first:
+      213: 6588775283044415498
+    second: Ally_Base_Template_ChatGPT_Created_7
+  - first:
+      213: -4226181345533451179
+    second: Ally_Base_Template_ChatGPT_Created_8
+  - first:
+      213: 7935517639178653735
+    second: Ally_Base_Template_ChatGPT_Created_9
+  - first:
+      213: -977967073452423751
+    second: Ally_Base_Template_ChatGPT_Created_10
+  - first:
+      213: -685273546633193752
+    second: Ally_Base_Template_ChatGPT_Created_11
+  - first:
+      213: -3820388980003751011
+    second: Ally_Base_Template_ChatGPT_Created_12
+  - first:
+      213: 151022572964395151
+    second: Ally_Base_Template_ChatGPT_Created_13
+  - first:
+      213: 2300288090698742241
+    second: Ally_Base_Template_ChatGPT_Created_14
+  - first:
+      213: 6403586524725306102
+    second: Ally_Base_Template_ChatGPT_Created_15
+  - first:
+      213: -5110085291342149520
+    second: Ally_Base_Template_ChatGPT_Created_16
+  - first:
+      213: 1699501578890168855
+    second: Ally_Base_Template_ChatGPT_Created_17
+  - first:
+      213: 5941019702184343768
+    second: Ally_Base_Template_ChatGPT_Created_18
+  - first:
+      213: -2454968946149349295
+    second: Ally_Base_Template_ChatGPT_Created_19
+  - first:
+      213: 491498548825161854
+    second: Ally_Base_Template_ChatGPT_Created_20
+  - first:
+      213: 5148227027252036565
+    second: Ally_Base_Template_ChatGPT_Created_21
+  - first:
+      213: 846893523077234318
+    second: Ally_Base_Template_ChatGPT_Created_22
+  - first:
+      213: 6810411188335905996
+    second: Ally_Base_Template_ChatGPT_Created_23
+  - first:
+      213: 5012705034153488764
+    second: Ally_Base_Template_ChatGPT_Created_24
+  - first:
+      213: -1649471064801237900
+    second: Ally_Base_Template_ChatGPT_Created_25
+  - first:
+      213: -6549707838934094711
+    second: Ally_Base_Template_ChatGPT_Created_26
+  - first:
+      213: -9148997675996819798
+    second: Ally_Base_Template_ChatGPT_Created_27
+  - first:
+      213: 6535369888558040829
+    second: Ally_Base_Template_ChatGPT_Created_28
+  - first:
+      213: -1015634789109729573
+    second: Ally_Base_Template_ChatGPT_Created_29
+  - first:
+      213: 5350953107694948735
+    second: Ally_Base_Template_ChatGPT_Created_30
+  - first:
+      213: -3497410071758981546
+    second: Ally_Base_Template_ChatGPT_Created_31
+  - first:
+      213: -7641290858959276853
+    second: Ally_Base_Template_ChatGPT_Created_32
+  - first:
+      213: -4901710973868976585
+    second: Ally_Base_Template_ChatGPT_Created_33
+  - first:
+      213: -732264764969987903
+    second: Ally_Base_Template_ChatGPT_Created_34
+  - first:
+      213: -1574331273251252455
+    second: Ally_Base_Template_ChatGPT_Created_35
+  - first:
+      213: 4846120954845451491
+    second: Ally_Base_Template_ChatGPT_Created_36
+  - first:
+      213: -6831584462827759547
+    second: Ally_Base_Template_ChatGPT_Created_37
+  - first:
+      213: -7249168830136538663
+    second: Ally_Base_Template_ChatGPT_Created_38
+  - first:
+      213: 9146328757966071317
+    second: Ally_Base_Template_ChatGPT_Created_39
+  - first:
+      213: 103192990074619829
+    second: Ally_Base_Template_ChatGPT_Created_40
+  - first:
+      213: 1404455414468898238
+    second: Ally_Base_Template_ChatGPT_Created_41
+  - first:
+      213: 4740704673469488111
+    second: Ally_Base_Template_ChatGPT_Created_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 727
+        width: 1024
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8f468ca1b4446c0800000000000000
+      internalID: -4160117577380202276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 631
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2338bea40df293f90800000000000000
+      internalID: -6973489976349850830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_2
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 631
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25ad83b2e5be4d30800000000000000
+      internalID: 4417668269776676139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_3
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 631
+        width: 97
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9dcb78ad96ebb60800000000000000
+      internalID: 7763759194934401516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_4
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 631
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e13df2f65d325d0800000000000000
+      internalID: -3088390245925577070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_5
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 632
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e6abf6c24dce420800000000000000
+      internalID: 2660734767187258974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_6
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 631
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb2e3068cb50ad50800000000000000
+      internalID: 6746493157967276993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_7
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 631
+        width: 66
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a087cba0638007b50800000000000000
+      internalID: 6588775283044415498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_8
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 631
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554a81f15769955c0800000000000000
+      internalID: -4226181345533451179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_9
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 631
+        width: 56
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7201718af3f902e60800000000000000
+      internalID: 7935517639178653735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_10
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 632
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b507d0d0209d62f0800000000000000
+      internalID: -977967073452423751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_11
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 631
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6d4fe075b6d76f0800000000000000
+      internalID: -685273546633193752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_12
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 631
+        width: 58
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b3f07c6704bfac0800000000000000
+      internalID: -3820388980003751011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_13
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 631
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88bb9eda3a881200800000000000000
+      internalID: 151022572964395151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_14
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 631
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9f82fb4d34cef10800000000000000
+      internalID: 2300288090698742241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_15
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 631
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2eabe340c1ed850800000000000000
+      internalID: 6403586524725306102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_16
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 631
+        width: 53
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0784a9d70845519b0800000000000000
+      internalID: -5110085291342149520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_17
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 589
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ac6f08ea7d59710800000000000000
+      internalID: 1699501578890168855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_18
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 598
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d87b4831fdb27250800000000000000
+      internalID: 5941019702184343768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_19
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 591
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158272e10c23eedd0800000000000000
+      internalID: -2454968946149349295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_20
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 598
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70085a735722d600800000000000000
+      internalID: 491498548825161854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_21
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 593
+        width: 61
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d34c6e643d227740800000000000000
+      internalID: 5148227027252036565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_22
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 598
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ef8951c25c0cb00800000000000000
+      internalID: 846893523077234318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_23
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 591
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc8b1784e0738e50800000000000000
+      internalID: 6810411188335905996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_24
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 591
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71f78c8ba4b09540800000000000000
+      internalID: 5012705034153488764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_25
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 595
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474ac3b4ec6eb19e0800000000000000
+      internalID: -1649471064801237900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_26
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 595
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cedbd1c63ca15a0800000000000000
+      internalID: -6549707838934094711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_27
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 591
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaec55f461b380180800000000000000
+      internalID: -9148997675996819798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_28
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 593
+        width: 68
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6494ba94c42ba50800000000000000
+      internalID: 6535369888558040829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_29
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 540
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6f5955a8db7e1f0800000000000000
+      internalID: -1015634789109729573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_30
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 540
+        width: 73
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f711ee93087624a40800000000000000
+      internalID: 5350953107694948735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_31
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 540
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656beeed114b67fc0800000000000000
+      internalID: -3497410071758981546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_32
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 540
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4fa46f27ea4f590800000000000000
+      internalID: -7641290858959276853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_33
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 539
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736d7e2f6df99fbb0800000000000000
+      internalID: -4901710973868976585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_34
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 535
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0dd62731976d5f0800000000000000
+      internalID: -732264764969987903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_35
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 540
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91712135c0ad62ae0800000000000000
+      internalID: -1574331273251252455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 453
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4d3242551e04340800000000000000
+      internalID: 4846120954845451491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_37
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 215
+        width: 495
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548d21850265131a0800000000000000
+      internalID: -6831584462827759547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_38
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 151
+        width: 82
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9a0e25b57c56b90800000000000000
+      internalID: -7249168830136538663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_39
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 154
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516e189cb894eee70800000000000000
+      internalID: 9146328757966071317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_40
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 8
+        width: 570
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b745bc4a7d9e6100800000000000000
+      internalID: 103192990074619829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_41
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 151
+        width: 82
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdea4222c0ad7310800000000000000
+      internalID: 1404455414468898238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Base_Template_ChatGPT_Created_42
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 155
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: febde2f78cd5ac140800000000000000
+      internalID: 4740704673469488111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ally_Base_Template_ChatGPT_Created_0: -4160117577380202276
+      Ally_Base_Template_ChatGPT_Created_1: -6973489976349850830
+      Ally_Base_Template_ChatGPT_Created_10: -977967073452423751
+      Ally_Base_Template_ChatGPT_Created_11: -685273546633193752
+      Ally_Base_Template_ChatGPT_Created_12: -3820388980003751011
+      Ally_Base_Template_ChatGPT_Created_13: 151022572964395151
+      Ally_Base_Template_ChatGPT_Created_14: 2300288090698742241
+      Ally_Base_Template_ChatGPT_Created_15: 6403586524725306102
+      Ally_Base_Template_ChatGPT_Created_16: -5110085291342149520
+      Ally_Base_Template_ChatGPT_Created_17: 1699501578890168855
+      Ally_Base_Template_ChatGPT_Created_18: 5941019702184343768
+      Ally_Base_Template_ChatGPT_Created_19: -2454968946149349295
+      Ally_Base_Template_ChatGPT_Created_2: 4417668269776676139
+      Ally_Base_Template_ChatGPT_Created_20: 491498548825161854
+      Ally_Base_Template_ChatGPT_Created_21: 5148227027252036565
+      Ally_Base_Template_ChatGPT_Created_22: 846893523077234318
+      Ally_Base_Template_ChatGPT_Created_23: 6810411188335905996
+      Ally_Base_Template_ChatGPT_Created_24: 5012705034153488764
+      Ally_Base_Template_ChatGPT_Created_25: -1649471064801237900
+      Ally_Base_Template_ChatGPT_Created_26: -6549707838934094711
+      Ally_Base_Template_ChatGPT_Created_27: -9148997675996819798
+      Ally_Base_Template_ChatGPT_Created_28: 6535369888558040829
+      Ally_Base_Template_ChatGPT_Created_29: -1015634789109729573
+      Ally_Base_Template_ChatGPT_Created_3: 7763759194934401516
+      Ally_Base_Template_ChatGPT_Created_30: 5350953107694948735
+      Ally_Base_Template_ChatGPT_Created_31: -3497410071758981546
+      Ally_Base_Template_ChatGPT_Created_32: -7641290858959276853
+      Ally_Base_Template_ChatGPT_Created_33: -4901710973868976585
+      Ally_Base_Template_ChatGPT_Created_34: -732264764969987903
+      Ally_Base_Template_ChatGPT_Created_35: -1574331273251252455
+      Ally_Base_Template_ChatGPT_Created_36: 4846120954845451491
+      Ally_Base_Template_ChatGPT_Created_37: -6831584462827759547
+      Ally_Base_Template_ChatGPT_Created_38: -7249168830136538663
+      Ally_Base_Template_ChatGPT_Created_39: 9146328757966071317
+      Ally_Base_Template_ChatGPT_Created_4: -3088390245925577070
+      Ally_Base_Template_ChatGPT_Created_40: 103192990074619829
+      Ally_Base_Template_ChatGPT_Created_41: 1404455414468898238
+      Ally_Base_Template_ChatGPT_Created_42: 4740704673469488111
+      Ally_Base_Template_ChatGPT_Created_5: 2660734767187258974
+      Ally_Base_Template_ChatGPT_Created_6: 6746493157967276993
+      Ally_Base_Template_ChatGPT_Created_7: 6588775283044415498
+      Ally_Base_Template_ChatGPT_Created_8: -4226181345533451179
+      Ally_Base_Template_ChatGPT_Created_9: 7935517639178653735
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

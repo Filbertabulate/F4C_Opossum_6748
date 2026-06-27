@@ -195,7 +195,8 @@ public class PlayerSpawner : MonoBehaviour
     }
 
     // A helper method to easily update all UI text whenever the economy changes
-    private void UpdateEconomyUI()
+    // Make it public since I need to use this update amount tracker via the turrent holder manager script
+    public void UpdateEconomyUI()
     {
         if (moneyText != null)
         {

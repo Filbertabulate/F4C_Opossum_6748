@@ -78,7 +78,7 @@ public class HealthBarUI : MonoBehaviour
         if (hpText != null)
         {
             // Cast the values to be intergers to making it look clean like "85 / 100" as an example
-            hpText.text = $"{(int)health}";
+            hpText.text = $"{(int)health} / {(int) maxHealth}";
         }
     }
 }

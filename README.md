@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="1254" height="1254" alt="Splash_Screen_Logo_ChatGPT_Created" src="https://github.com/user-attachments/assets/fb418408-be6a-4e63-9ef7-5ee8c928a0d9" />
+</p>
 # F4C_Opossum_6748
 NUS Orbital Project for AY 25/26
 Milestone 1

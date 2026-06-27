@@ -1,9 +1,15 @@
-# F4C_Opossum_6748
-NUS Orbital Project for AY 25/26
 <p align="center">
-  <img width="500" height="500" alt="F4C_Oppossum_Logo" src="https://github.com/user-attachments/assets/fb418408-be6a-4e63-9ef7-5ee8c928a0d9" />
+  <img width="280" height="280" alt="F4C_Oppossum_Logo" src="https://github.com/user-attachments/assets/f5b06686-7e2c-4ff1-ade8-ea2b8bd59d89" />
 </p>
-Milestone 1
+
+<h1 align="center">F4C Opossum</h1>
+
+<p align="center">
+  <strong>NUS Orbital Project for AY 25/26 — Milestone 1 (DEMO)</strong>
+</p>
+
+---------------------------------------------------------------------------------------------------------
+# Milestone 1
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/7e4a0241-355d-45d4-ad0f-4d8ded555110" />
 
 ## [DEMO](https://filbertabulate.github.io/F4C_Opossum_6748/)

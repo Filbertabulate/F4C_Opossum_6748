@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="280" height="280" alt="F4C_Oppossum_Logo" src="https://github.com/user-attachments/assets/758f7c49-c60c-4e5d-a5a9-c731ddcda45b" />
+  <img width="280" height="280" alt="F4C_Opossum_Logo" src="https://github.com/user-attachments/assets/34a5690c-4c88-41fb-920e-0b890bda01e7" />
 </p>
 
 <h1 align="center">F4C Opossum</h1>
@@ -11,7 +11,6 @@
 ---------------------------------------------------------------------------------------------------------
 # Milestone 1
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/7e4a0241-355d-45d4-ad0f-4d8ded555110" />
-
 ## [DEMO](https://filbertabulate.github.io/F4C_Opossum_6748/)
 
 F4C Opossum is a classic 2D side-scrolling strategy game inspired by the mechanics of Age of War. Players are challenged to balance resource economies, spawn tactical units, and manage base defenses to conquer a dynamic enemy AI. 

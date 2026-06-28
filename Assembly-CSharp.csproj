@@ -53,6 +53,7 @@
     <Compile Include="Assets\Scripts\MenuParallaxBehaviour.cs" />
     <Compile Include="Assets\Scripts\Audio_Scripts\MusicLibrary.cs" />
     <Compile Include="Assets\Scripts\UnitMove.cs" />
+    <Compile Include="Assets\Scripts\Turrets\TurretArcProjectile.cs" />
     <Compile Include="Assets\Scripts\Audio_Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Audio_Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Audio_Scripts\AudioSettingsUI.cs" />
@@ -61,13 +62,14 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\ScreenTransitions\CircleWipe.cs" />
     <Compile Include="Assets\Scripts\ScreenTransitions\SceneTransition.cs" />
+    <Compile Include="Assets\Scripts\Turrets\TurretAttackBox.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\ScreenTransitions\CrossFade.cs" />
     <Compile Include="Assets\Scripts\Audio_Scripts\SoundLibrary.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\TurretSlotUI.cs" />
+    <Compile Include="Assets\Scripts\Turrets\TurretSlotUI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\ScreenTransitions\LevelManager.cs" />
   </ItemGroup>

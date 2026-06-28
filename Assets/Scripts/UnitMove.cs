@@ -726,4 +726,10 @@ public class UnitMove : MonoBehaviour
             Debug.Log(gameObject.name + " melee attacked " + targetHealth.gameObject.name);
         }
     }
+
+    // Need to obtain the spawn order so that the turrent target knows which unit it should target first
+    public long GetSpawnOrder()
+    {
+        return spawnOrder;
+    }
 }

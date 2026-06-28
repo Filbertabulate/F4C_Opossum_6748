@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: 749daab5532df57489a98f64cdaa7dc3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 468725496993206329
+    second: Ally_Turret_Crossbow_ChatGPT_0
+  - first:
+      213: 30792836563095994
+    second: Ally_Turret_Crossbow_ChatGPT_1
+  - first:
+      213: -5413055906922988649
+    second: Ally_Turret_Crossbow_ChatGPT_2
+  - first:
+      213: -4590570248032239065
+    second: Ally_Turret_Crossbow_ChatGPT_3
+  - first:
+      213: 3092170105483100790
+    second: Ally_Turret_Crossbow_ChatGPT_4
+  - first:
+      213: 7731506252773777985
+    second: Ally_Turret_Crossbow_ChatGPT_5
+  - first:
+      213: -7375716090324535871
+    second: Ally_Turret_Crossbow_ChatGPT_6
+  - first:
+      213: 9056922802923131507
+    second: Ally_Turret_Crossbow_ChatGPT_7
+  - first:
+      213: 3714053471694327749
+    second: Ally_Turret_Crossbow_ChatGPT_8
+  - first:
+      213: -7819676895386930497
+    second: Ally_Turret_Crossbow_ChatGPT_9
+  - first:
+      213: -3572771766737920437
+    second: Ally_Turret_Crossbow_ChatGPT_10
+  - first:
+      213: 2805349248784229139
+    second: Ally_Turret_Crossbow_ChatGPT_11
+  - first:
+      213: 5217593031272322869
+    second: Ally_Turret_Crossbow_ChatGPT_12
+  - first:
+      213: 3276191399363251714
+    second: Ally_Turret_Crossbow_ChatGPT_13
+  - first:
+      213: 4041435488968242314
+    second: Ally_Turret_Crossbow_ChatGPT_14
+  - first:
+      213: -5854396196469884387
+    second: Ally_Turret_Crossbow_ChatGPT_15
+  - first:
+      213: 1410842446563356762
+    second: Ally_Turret_Crossbow_ChatGPT_16
+  - first:
+      213: -5297772160343091482
+    second: Ally_Turret_Crossbow_ChatGPT_17
+  - first:
+      213: -9175033458993357551
+    second: Ally_Turret_Crossbow_ChatGPT_18
+  - first:
+      213: -1012287792386208204
+    second: Ally_Turret_Crossbow_ChatGPT_19
+  - first:
+      213: -1762056799838900008
+    second: Ally_Turret_Crossbow_ChatGPT_20
+  - first:
+      213: 1221093409799520677
+    second: Ally_Turret_Crossbow_ChatGPT_21
+  - first:
+      213: -4458115678624389399
+    second: Ally_Turret_Crossbow_ChatGPT_22
+  - first:
+      213: -6269627821643134597
+    second: Ally_Turret_Crossbow_ChatGPT_23
+  - first:
+      213: 7953955599662665584
+    second: Ally_Turret_Crossbow_ChatGPT_24
+  - first:
+      213: -299912038565004071
+    second: Ally_Turret_Crossbow_ChatGPT_25
+  - first:
+      213: 92862266796733837
+    second: Ally_Turret_Crossbow_ChatGPT_26
+  - first:
+      213: -5457728651542259798
+    second: Ally_Turret_Crossbow_ChatGPT_27
+  - first:
+      213: -1619513026544671689
+    second: Ally_Turret_Crossbow_ChatGPT_28
+  - first:
+      213: 684361835234436668
+    second: Ally_Turret_Crossbow_ChatGPT_29
+  - first:
+      213: -1370182912314460843
+    second: Ally_Turret_Crossbow_ChatGPT_30
+  - first:
+      213: -7979532385849572403
+    second: Ally_Turret_Crossbow_ChatGPT_31
+  - first:
+      213: -2542642644176015964
+    second: Ally_Turret_Crossbow_ChatGPT_32
+  - first:
+      213: -5336983966147151249
+    second: Ally_Turret_Crossbow_ChatGPT_33
+  - first:
+      213: -6302040417886902467
+    second: Ally_Turret_Crossbow_ChatGPT_34
+  - first:
+      213: 2054996506199560099
+    second: Ally_Turret_Crossbow_ChatGPT_35
+  - first:
+      213: 4911401457210733069
+    second: Ally_Turret_Crossbow_ChatGPT_36
+  - first:
+      213: 6600392657238197649
+    second: Ally_Turret_Crossbow_ChatGPT_37
+  - first:
+      213: 107000531415621612
+    second: Ally_Turret_Crossbow_ChatGPT_38
+  - first:
+      213: -1259656987782094253
+    second: Ally_Turret_Crossbow_ChatGPT_39
+  - first:
+      213: 5322911758383810536
+    second: Ally_Turret_Crossbow_ChatGPT_40
+  - first:
+      213: 8181825256054075886
+    second: Ally_Turret_Crossbow_ChatGPT_41
+  - first:
+      213: 1255498329859511341
+    second: Ally_Turret_Crossbow_ChatGPT_42
+  - first:
+      213: -945176179018657445
+    second: Ally_Turret_Crossbow_ChatGPT_43
+  - first:
+      213: -864491114500906571
+    second: Ally_Turret_Crossbow_ChatGPT_44
+  - first:
+      213: -4862113457137556115
+    second: Ally_Turret_Crossbow_ChatGPT_45
+  - first:
+      213: -8327574905869664802
+    second: Ally_Turret_Crossbow_ChatGPT_46
+  - first:
+      213: 5461395453265426775
+    second: Ally_Turret_Crossbow_ChatGPT_47
+  - first:
+      213: -4655117791385326942
+    second: Ally_Turret_Crossbow_ChatGPT_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 361
+        width: 1533
+        height: 663
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930d2792b5f318600800000000000000
+      internalID: 468725496993206329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 928
+        width: 7
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab158f4fbe56d6000800000000000000
+      internalID: 30792836563095994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1013
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b768e0556f0e4b0800000000000000
+      internalID: -5413055906922988649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_3
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1017
+        width: 236
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722cf896ea40b40c0800000000000000
+      internalID: -4590570248032239065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_4
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1016
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6720762f35899ea20800000000000000
+      internalID: 3092170105483100790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_5
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1016
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142ea4f39f3db4b60800000000000000
+      internalID: 7731506252773777985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_6
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1019
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5b2184b4134a990800000000000000
+      internalID: -7375716090324535871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 902
+        width: 566
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3725e5abd47a0bd70800000000000000
+      internalID: 9056922802923131507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 888
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf852164f7fa8330800000000000000
+      internalID: 3714053471694327749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 648
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2f1284b4dea7390800000000000000
+      internalID: -7819676895386930497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_10
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 615
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e9a0ce107fa6ec0800000000000000
+      internalID: -3572771766737920437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_11
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 615
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31361b4474a9ee620800000000000000
+      internalID: 2805349248784229139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_12
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 615
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5375a8bc73d986840800000000000000
+      internalID: 5217593031272322869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_13
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 614
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e8c3f38be577d20800000000000000
+      internalID: 3276191399363251714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_14
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 615
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84fb9e2a20161830800000000000000
+      internalID: 4041435488968242314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 621
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ab30f5da101cea0800000000000000
+      internalID: -5854396196469884387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 472
+        width: 1456
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50b37deab1549310800000000000000
+      internalID: 1410842446563356762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_17
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 572
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6dbc9f9488a76b0800000000000000
+      internalID: -5297772160343091482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 897
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d90623eabbba080800000000000000
+      internalID: -9175033458993357551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_19
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 478
+        width: 6
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e0b5cbd91a3f1f0800000000000000
+      internalID: -1012287792386208204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_20
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 320
+        width: 12
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d07a832daaeb87e0800000000000000
+      internalID: -1762056799838900008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_21
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 168
+        width: 659
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1cba09cf132f010800000000000000
+      internalID: 1221093409799520677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_22
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 247
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e66eff09679122c0800000000000000
+      internalID: -4458115678624389399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_23
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 247
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b790e01d6becdf8a0800000000000000
+      internalID: -6269627821643134597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_24
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 247
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f4f1dd970226e60800000000000000
+      internalID: 7953955599662665584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_25
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 247
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc3875079f76dbf0800000000000000
+      internalID: -299912038565004071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_26
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 247
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85f4795db9e94100800000000000000
+      internalID: 92862266796733837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_27
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 246
+        width: 45
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa71a5c25b04244b0800000000000000
+      internalID: -5457728651542259798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_28
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 245
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 734efaf9b755689e0800000000000000
+      internalID: -1619513026544671689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_29
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 247
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36abf696775f7900800000000000000
+      internalID: 684361835234436668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_30
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 229
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555bf2a96e12cfce0800000000000000
+      internalID: -1370182912314460843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_31
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 222
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc306bb8291034190800000000000000
+      internalID: -7979532385849572403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_32
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 1483
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ade0239cf7b6bcd0800000000000000
+      internalID: -2542642644176015964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 69
+        width: 261
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6af7ddfb593fe5b0800000000000000
+      internalID: -5336983966147151249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_34
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 61
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3762bb21a7aa88a0800000000000000
+      internalID: -6302040417886902467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 37
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af81be3f60d48c10800000000000000
+      internalID: 2054996506199560099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_36
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 29
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02b1668a9dc82440800000000000000
+      internalID: 4911401457210733069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_37
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 21
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19587c0c62e499b50800000000000000
+      internalID: 6600392657238197649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_38
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 7
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef5ec99a642c7100800000000000000
+      internalID: 107000531415621612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_39
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 352e860c4acc48ee0800000000000000
+      internalID: -1259656987782094253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_40
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 53
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e78731da08ced940800000000000000
+      internalID: 5322911758383810536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_41
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 69
+        width: 248
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee13c61a8beab8170800000000000000
+      internalID: 8181825256054075886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_42
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 61
+        width: 235
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d245f5f341d6c6110800000000000000
+      internalID: 1255498329859511341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_43
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 93
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b519e6fd54f02e2f0800000000000000
+      internalID: -945176179018657445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_44
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 88
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b121b069e5b004f0800000000000000
+      internalID: -864491114500906571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_45
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 0
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d656ba1429d468cb0800000000000000
+      internalID: -4862113457137556115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_46
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 91
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd7e279eb28e6c80800000000000000
+      internalID: -8327574905869664802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_47
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 69
+        width: 384
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759b1d1aa36cacb40800000000000000
+      internalID: 5461395453265426775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ally_Turret_Crossbow_ChatGPT_48
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 10
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa60e85803b56fb0800000000000000
+      internalID: -4655117791385326942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ally_Turret_Crossbow_ChatGPT_0: 468725496993206329
+      Ally_Turret_Crossbow_ChatGPT_1: 30792836563095994
+      Ally_Turret_Crossbow_ChatGPT_10: -3572771766737920437
+      Ally_Turret_Crossbow_ChatGPT_11: 2805349248784229139
+      Ally_Turret_Crossbow_ChatGPT_12: 5217593031272322869
+      Ally_Turret_Crossbow_ChatGPT_13: 3276191399363251714
+      Ally_Turret_Crossbow_ChatGPT_14: 4041435488968242314
+      Ally_Turret_Crossbow_ChatGPT_15: -5854396196469884387
+      Ally_Turret_Crossbow_ChatGPT_16: 1410842446563356762
+      Ally_Turret_Crossbow_ChatGPT_17: -5297772160343091482
+      Ally_Turret_Crossbow_ChatGPT_18: -9175033458993357551
+      Ally_Turret_Crossbow_ChatGPT_19: -1012287792386208204
+      Ally_Turret_Crossbow_ChatGPT_2: -5413055906922988649
+      Ally_Turret_Crossbow_ChatGPT_20: -1762056799838900008
+      Ally_Turret_Crossbow_ChatGPT_21: 1221093409799520677
+      Ally_Turret_Crossbow_ChatGPT_22: -4458115678624389399
+      Ally_Turret_Crossbow_ChatGPT_23: -6269627821643134597
+      Ally_Turret_Crossbow_ChatGPT_24: 7953955599662665584
+      Ally_Turret_Crossbow_ChatGPT_25: -299912038565004071
+      Ally_Turret_Crossbow_ChatGPT_26: 92862266796733837
+      Ally_Turret_Crossbow_ChatGPT_27: -5457728651542259798
+      Ally_Turret_Crossbow_ChatGPT_28: -1619513026544671689
+      Ally_Turret_Crossbow_ChatGPT_29: 684361835234436668
+      Ally_Turret_Crossbow_ChatGPT_3: -4590570248032239065
+      Ally_Turret_Crossbow_ChatGPT_30: -1370182912314460843
+      Ally_Turret_Crossbow_ChatGPT_31: -7979532385849572403
+      Ally_Turret_Crossbow_ChatGPT_32: -2542642644176015964
+      Ally_Turret_Crossbow_ChatGPT_33: -5336983966147151249
+      Ally_Turret_Crossbow_ChatGPT_34: -6302040417886902467
+      Ally_Turret_Crossbow_ChatGPT_35: 2054996506199560099
+      Ally_Turret_Crossbow_ChatGPT_36: 4911401457210733069
+      Ally_Turret_Crossbow_ChatGPT_37: 6600392657238197649
+      Ally_Turret_Crossbow_ChatGPT_38: 107000531415621612
+      Ally_Turret_Crossbow_ChatGPT_39: -1259656987782094253
+      Ally_Turret_Crossbow_ChatGPT_4: 3092170105483100790
+      Ally_Turret_Crossbow_ChatGPT_40: 5322911758383810536
+      Ally_Turret_Crossbow_ChatGPT_41: 8181825256054075886
+      Ally_Turret_Crossbow_ChatGPT_42: 1255498329859511341
+      Ally_Turret_Crossbow_ChatGPT_43: -945176179018657445
+      Ally_Turret_Crossbow_ChatGPT_44: -864491114500906571
+      Ally_Turret_Crossbow_ChatGPT_45: -4862113457137556115
+      Ally_Turret_Crossbow_ChatGPT_46: -8327574905869664802
+      Ally_Turret_Crossbow_ChatGPT_47: 5461395453265426775
+      Ally_Turret_Crossbow_ChatGPT_48: -4655117791385326942
+      Ally_Turret_Crossbow_ChatGPT_5: 7731506252773777985
+      Ally_Turret_Crossbow_ChatGPT_6: -7375716090324535871
+      Ally_Turret_Crossbow_ChatGPT_7: 9056922802923131507
+      Ally_Turret_Crossbow_ChatGPT_8: 3714053471694327749
+      Ally_Turret_Crossbow_ChatGPT_9: -7819676895386930497
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

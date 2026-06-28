@@ -181,12 +181,18 @@ public class TurretAttackBox : MonoBehaviour
         // Turret Y = 6
         // Ground Y = 0
         // Middle is just (6 + 0) / 2 = 3
-        // For Gizmos tracking
-        float currentDirection = GetDirection();
+
+        // This if method is just for the Gizmos tracking, where the turrent is not created yet, but we
+        // want to see the range in the scene
+        if (direction == 0)
+        {
+            // Fallback if Start() hasn't initialized it yet.
+            direction = GetDirection();
+        }
 
         float centerX;
         // The condition is differnt based on the direction it is facing
-        if (currentDirection == 1)
+        if (direction == 1)
         {
             // Player turret
             centerX = transform.position.x + attackRange / 2f;
@@ -248,9 +254,11 @@ public class TurretAttackBox : MonoBehaviour
         GameObject arrow = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
         // For Debug Purposes
+        /*
         arrow.name = "Spawned_Arrow";
         Debug.Log("Spawned ONE arrow: " + arrow.GetInstanceID());
         Debug.Log($"Instantiate finished {arrow.GetInstanceID()}");
+        */
 
         // Obtain the projectile script.
         TurretArcProjectile projectile = arrow.GetComponent<TurretArcProjectile>();

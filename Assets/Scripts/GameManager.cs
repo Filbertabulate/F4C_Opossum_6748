@@ -77,8 +77,17 @@ public class GameManager : MonoBehaviour
         // Unfreeze time before reloading, otherwise the new game will start frozen!
         Time.timeScale = 1f; 
         
-        // Load Back the main Menu Scene
-        LevelManager.Instance.LoadScene("Main_Menu","CrossFade");
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Load Back the main Menu Scene, see if the transtion style is active instance, then use the
+        // transition, else no transition.
+        if (LevelManager.Instance != null)
+        {
+            LevelManager.Instance.LoadSceneNoLoadingBar("Main_Menu", "CrossFade");
+        }
+        // For scenarios where we start at game scene for testing
+        else
+        {
+            Debug.LogWarning("LevelManager missing, loading Main_Menu directly.");
+            SceneManager.LoadScene("Main_Menu");
+        }
     }
 }

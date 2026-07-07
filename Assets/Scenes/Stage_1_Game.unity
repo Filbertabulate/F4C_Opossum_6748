@@ -754,6 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 500
   maxHp: 500
+  canBeHealed: 0
   healthBar: {fileID: 605624551}
 --- !u!1 &327235034
 GameObject:
@@ -1098,6 +1099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 150
   maxHp: 150
+  canBeHealed: 1
   healthBar: {fileID: 327235036}
 --- !u!58 &422891332
 CircleCollider2D:
@@ -3672,6 +3674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 500
   maxHp: 500
+  canBeHealed: 0
   healthBar: {fileID: 550705682}
 --- !u!1 &1698718118
 GameObject:
@@ -4031,6 +4034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 100
   maxHp: 100
+  canBeHealed: 1
   healthBar: {fileID: 1037811154}
 --- !u!58 &1827035034
 CircleCollider2D:
@@ -5153,6 +5157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 500
   maxHp: 500
+  canBeHealed: 1
   healthBar: {fileID: 0}
 --- !u!1 &58995633248934479
 GameObject:
@@ -6306,6 +6311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   hp: 500
   maxHp: 500
+  canBeHealed: 1
   healthBar: {fileID: 2456038268176373463}
 --- !u!4 &3927201826135750029
 Transform:

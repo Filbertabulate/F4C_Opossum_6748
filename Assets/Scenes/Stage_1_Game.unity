@@ -2463,11 +2463,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d94f0d9c7667d46938a92598cec05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerEras:
+  - eraName: Medieval
+    units:
+    - unitName: Medieval Swordman
+      prefab: {fileID: 585359228010224065, guid: 07c2daf15b93cd344a29a70a825e79c0, type: 3}
+      goldCost: 10
+      trainTime: 0.5
+    - unitName: Medieval Archer
+      prefab: {fileID: 585359228010224065, guid: 1a79983bb9715034ab88fba95971dd4c, type: 3}
+      goldCost: 25
+      trainTime: 0.5
+    - unitName: Medieval Magic SwordMan
+      prefab: {fileID: 585359228010224065, guid: 5d62a925faeff904baa41646b2f83a3e, type: 3}
+      goldCost: 50
+      trainTime: 0.5
+  currentEraIndex: 0
   spawnPoint: {fileID: 798795695}
-  spawnCooldown: 0.5
   playerBaseHealth: {fileID: 25423739604177897}
   economySystem: {fileID: 1722320473}
-  unitCosts: 0a0000001900000032000000
 --- !u!1 &945085738
 GameObject:
   m_ObjectHideFlags: 0

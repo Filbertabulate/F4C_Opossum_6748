@@ -1,9 +1,9 @@
+# Normalise text files
+* text=auto
+
 # This is for tracking the Git LFS (Large File Storage)
 *.psb filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
-
-# Normalise text files
-* text=auto
 
 # C# source files
 *.cs text eol=lf

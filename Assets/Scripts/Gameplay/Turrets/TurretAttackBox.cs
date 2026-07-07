@@ -203,7 +203,28 @@ public class TurretAttackBox : MonoBehaviour
             centerX = transform.position.x - attackRange / 2f;
         }
 
-        float centerY = (transform.position.y + groundReference.position.y) / 2f;
+        // Use GroundTop if it exists, otherwise just use the turret's own Y.
+        // Should be tempoarary until we have a better way to find the ground position.
+        float groundY = transform.position.y;
+
+        // To prevent the groundReference from being null, we will try to find it if it is null, 
+        // and assign it to the groundReference variable
+        if (groundReference != null)
+        {
+            groundY = groundReference.position.y;
+        }
+        else
+        {
+            GameObject ground = GameObject.Find("GroundTop");
+
+            if (ground != null)
+            {
+                groundReference = ground.transform;
+                groundY = groundReference.position.y;
+            }
+        }
+
+        float centerY = (transform.position.y + groundY) / 2f;
 
         // Update the x and y coords of the box ceneter
         return new Vector2(centerX, centerY);
@@ -211,11 +232,32 @@ public class TurretAttackBox : MonoBehaviour
 
     private Vector2 GetBoxSize()
     {
+        // Use GroundTop if it exists, otherwise just use the turret's own Y.
+        // Should be tempoarary until we have a better way to find the ground position.
+        float groundY = transform.position.y;
+
+        // To prevent the groundReference from being null, we will try to find it if it is null, 
+        // and assign it to the groundReference variable
+        if (groundReference != null)
+        {
+            groundY = groundReference.position.y;
+        }
+        else
+        {
+            GameObject ground = GameObject.Find("GroundTop");
+
+            if (ground != null)
+            {
+                groundReference = ground.transform;
+                groundY = groundReference.position.y;
+            }
+        }
+        
         // How baig the rectange, the width is just the attack range, while the height
         // has to be from the ground position up to the turret position.
         // Mathf.Abs is to ensure we account in case we have negative height, which is not physically
         // possible
-        float height = Mathf.Abs(transform.position.y - groundReference.position.y);
+        float height = Mathf.Abs(transform.position.y - groundY);
 
         // return the x and y coords of the box size
         return new Vector2(attackRange, height);

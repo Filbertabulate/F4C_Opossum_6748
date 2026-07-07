@@ -2,7 +2,10 @@ using UnityEngine;
 // Old version
 // using UnityEngine.InputSystem;
 // We need this namespace to talk to TextMeshPro UI elements!
-using TMPro;
+
+// Move the economy system to another script to better OOP.
+//using TMPro;
+
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -30,37 +33,14 @@ public class PlayerSpawner : MonoBehaviour
     // if the based is destroyed
     public HealthSystem playerBaseHealth;
 
+    // Now we need a script to access for the economy system.
+    public EconomySystem economySystem;
+
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
 
-    [Header("Economy Settings: Gold")]
-    // The amount of money you start with
-    public int currentMoney = 50;
-    // How much money you get per tick
-    public int passiveIncomeAmount = 5;
-    // How often you get money (e.g., 1 second)
-    public float incomeInterval = 1f;
-    // A timer to track when to give the next income
-    private float incomeTimer = 0f;
-
-    [Header("Economy Settings: EXP")]
-    // The amount of EXP you start with
-    public int currentExp = 0;
-    // How much EXP you get per tick
-    public int passiveExpAmount = 1;
-    // How often you get EXP (e.g., 1 second)
-    public float expInterval = 1f; 
-    // A timer to track when to give the next EXP
-    private float expTimer = 0f;
-
     [Tooltip("Type the cost of each unit here. Index 0 = Red, Index 1 = Yellow, Index 2 = Green")]
     public int[] unitCosts; 
-
-    [Header("UI References")]
-    // The text on screen showing your money
-    public TextMeshProUGUI moneyText;
-    // The text on screen showing your EXP
-    public TextMeshProUGUI expText;
 
     private void Awake()
     {
@@ -73,9 +53,6 @@ public class PlayerSpawner : MonoBehaviour
         // As such, I had to create a folder called Resources in the Assets directory, and then create a subfolder
         // called PlayerUnits to store all the player unit prefabs that I want to spawn in the game.
         playerUnits = Resources.LoadAll<GameObject>("PlayerUnits");
-
-        // Set the initial text on the screen at startup
-        UpdateEconomyUI();
     }
 
     // Update is called once per frame
@@ -94,24 +71,6 @@ public class PlayerSpawner : MonoBehaviour
         {
             spawnCooldownTimer -= Time.deltaTime;
         }
-
-        // --- NEW: Passive Income Generator (Gold) ---
-        incomeTimer += Time.deltaTime;
-        if (incomeTimer >= incomeInterval)
-        {
-            currentMoney += passiveIncomeAmount; // Give the player money
-            incomeTimer = 0f; // Reset the timer
-            UpdateEconomyUI();  // Update the screen text
-        }
-
-        // --- NEW: Passive EXP Generator ---
-        expTimer += Time.deltaTime;
-        if (expTimer >= expInterval)
-        {
-            currentExp += passiveExpAmount; // Give the player EXP
-            expTimer = 0f; // Reset the timer
-            UpdateEconomyUI();  // Update the screen text
-        }
     }
 
     // Changed to PUBLIC so UI buttons can access it.
@@ -128,12 +87,21 @@ public class PlayerSpawner : MonoBehaviour
             return;
         }
 
-        // Check 3: Prevent errors if the array is empty or if the button passes a wrong number
-        if (playerUnits.Length == 0)
+        // Check 3: Do we even have an economy system to check if we can afford the unit? If not, we can't spawn.
+         if (economySystem == null)
+        {
+            Debug.LogWarning("EconomySystem not assigned!");
+            return;
+        }
+        
+        // Check 4: Prevent errors if the array is empty or if the button passes a wrong number
+        if (playerUnits == null || playerUnits.Length == 0)
         {
             Debug.LogWarning("No player units assigned to the spawner (Resources Folder in Assets)!");
             return;
         }
+
+        // Check 5: Prevent errors if the button passes a wrong number, i.e. out of bounds of the array
         if (unitIndex < 0 || unitIndex >= playerUnits.Length)
         {
             Debug.LogWarning("Invalid unit index requested by the UI button!");
@@ -141,75 +109,59 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         // --- NEW: Determine the cost of the requested unit ---
-        int cost = 0;
-        // Make sure you actually typed a cost into the Unity Inspector for this unit
-        if (unitIndex < unitCosts.Length) 
+        int cost = GetUnitCost(unitIndex);
+
+        // Now to check if the player can afford the unit requested ---
+        // Note that this method if the player can afford the unit, it will automatically deduct the cost from 
+        // the player's gold.
+        if (!economySystem.TrySpendGold(cost))
         {
-            cost = unitCosts[unitIndex];
+            // If the purchase fails, the method TrySpendGold will return false, 
+            // and we can log a message to the console indicating that the player cannot afford the unit.
+            Debug.Log("Not enough gold! Need: " + cost + ", current: " + economySystem.Gold);
+            return;
         }
-        else
+
+        // We use the specific index passed by the UI button instead of Random.Range
+        GameObject unitToSpawn = playerUnits[unitIndex];
+
+        // Then we can instantiate the selected unit at the spawn point's position and rotation.
+        // https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
+        // Instantiate is a method that creates a copy of the given object, in this case, the unitToSpawn, 
+        // at the specified position and rotation.
+        // This way I only need to create one of that unit in the hierarchy, and I can spawn as many as I want 
+        // by instantiating it.
+        // Why I am storing the value of the spawned Unit is becuase I need to updates its spawn Order value
+        // in its UnitMove Script so that the is Ally tracking method works as indented.
+        GameObject spawnedUnit = Instantiate(unitToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+        // Obtain the UnitMove script form the spawned unit, if there is.
+        UnitMove unitMove = spawnedUnit.GetComponent<UnitMove>();
+
+        // If such a script is available in this ally unit, then I will define its spawn Order value as such
+        // And increment the next spawnOrder value up by one to keep it unique, where lower spawnOrder number
+        // means the unit was spawned first
+        if (unitMove != null)
         {
-            Debug.LogWarning("Warning: You forgot to set the cost for unit " + unitIndex + " in the Inspector!");
+            unitMove.InitialiseSpawnOrder(nextSpawnOrder);
+            nextSpawnOrder++;
         }
 
-        // --- NEW: Check if player can afford it ---
-        if (currentMoney >= cost)
-        {
-            // Deduct the money and update the screen
-            currentMoney -= cost;
-            UpdateEconomyUI();
-
-            // We use the specific index passed by the UI button instead of Random.Range
-            GameObject unitToSpawn = playerUnits[unitIndex];
-
-            // Then we can instantiate the selected unit at the spawn point's position and rotation.
-            // https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
-            // Instantiate is a method that creates a copy of the given object, in this case, the unitToSpawn, 
-            // at the specified position and rotation.
-            // This way I only need to create one of that unit in the hierarchy, and I can spawn as many as I want 
-            // by instantiating it.
-            // Why I am storing the value of the spawned Unit is becuase I need to updates its spawn Order value
-            // in its UnitMove Script so that the is Ally tracking method works as indented.
-            GameObject spawnedUnit = Instantiate(unitToSpawn, spawnPoint.position, spawnPoint.rotation);
-
-            // Obtain the UnitMove script form the spawned unit, if there is.
-            UnitMove unitMove = spawnedUnit.GetComponent<UnitMove>();
-
-            // If such a script is available in this ally unit, then I will define its spawn Order value as such
-            // And increment the next spawnOrder value up by one to keep it unique, where lower spawnOrder number
-            // means the unit was spawned first
-            if (unitMove != null)
-            {
-                unitMove.InitialiseSpawnOrder(nextSpawnOrder);
-                nextSpawnOrder++;
-            }
-
-            // Reset the cooldown timer so they can't instantly spam the button
-            spawnCooldownTimer = spawnCooldown;
-        }
-        else
-        {
-            // If they are broke, log it and deny the spawn!
-            Debug.Log("Not enough money! Need: " + cost + ", but you only have: " + currentMoney);
-        }
+        // Reset the cooldown timer so they can't instantly spam the button
+        spawnCooldownTimer = spawnCooldown;
     }
 
-    // A helper method to easily update all UI text whenever the economy changes
-    // Make it public since I need to use this update amount tracker via the turrent holder manager script
-    public void UpdateEconomyUI()
+    // A helper method to obtain the cost of a unit based on its index in the playerUnits array.
+    private int GetUnitCost(int unitIndex)
     {
-        if (moneyText != null)
+        // If it is a valid unit index, where  the array is not null, then we return that unit cost.
+        if (unitCosts != null && unitIndex < unitCosts.Length)
         {
-            // No Need to show Gold Text anymore
-            moneyText.text = currentMoney.ToString();
-            // moneyText.text = "Gold: " + currentMoney.ToString();
+            return unitCosts[unitIndex];
         }
 
-        if (expText != null)
-        {
-            // No need to show "Exp: " text anymore
-            expText.text = currentExp.ToString();
-            // expText.text = "Exp: " + currentExp.ToString();
-        }
+        // If not we get a debug log saying we cannot find that unit cost, and return 0 as the default value.
+        Debug.LogWarning("Warning: You forgot to set the cost for unit " + unitIndex + " in the Inspector!");
+        return 0;
     }
 }

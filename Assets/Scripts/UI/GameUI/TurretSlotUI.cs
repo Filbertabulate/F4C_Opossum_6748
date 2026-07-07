@@ -4,12 +4,12 @@ using UnityEngine.UI;
 // To allow build the turret slot holder, and the turret itslef
 public class TurretSlotUI : MonoBehaviour
 {
-    // Get the economy and exp value counter, which is in the player spawner script, to get
+    // Get the economy and exp value counter, which is in now in the economy system script, to get
     // - currentMoney
     // - currentExp
     // - UpdateEconomyUI()
     [Header("Economy")]
-    public PlayerSpawner playerSpawner;
+    public EconomySystem economySystem;
 
     // The objects to build, in this case is the turret holder and the turret prefab to spawn at
     // that location
@@ -77,17 +77,24 @@ public class TurretSlotUI : MonoBehaviour
 
     private void Update()
     {
+        // If there is no ecomomy system, we cannot do anything, so we return
+        if (economySystem == null)
+        {
+            Debug.LogWarning("EconomySystem not assigned!");
+            return;
+        }
+
         // Light up the unlock button when enough EXP.
         if (unlockButton.gameObject.activeSelf)
         {
-            unlockButton.interactable = playerSpawner.currentExp >= unlockExpCost;
+            unlockButton.interactable = economySystem.CanAffordExp(unlockExpCost);
         }
 
         // Light up the build button when there holder is unlocked, there is no turrent placed, 
         // and we have enough money
         if (buildButton.gameObject.activeSelf)
         {
-            buildButton.interactable = isUnlocked && !hasTurret && playerSpawner.currentMoney >= turretGoldCost;
+            buildButton.interactable = isUnlocked && !hasTurret && economySystem.CanAffordGold(turretGoldCost);
         }
     }
 
@@ -113,17 +120,24 @@ public class TurretSlotUI : MonoBehaviour
             return;
         }
 
-        // Else for debug purpose, we try to buy the holder when we not enough exp to do so,
-        // dont allow the "purchase" to happen
-        if (playerSpawner.currentExp < unlockExpCost)
+        // If there is no ecomomy system, we cannot do anything, so we return
+        if (economySystem == null)
         {
-            Debug.Log("Not enough EXP to unlock holder!");
+            Debug.LogWarning("EconomySystem not assigned!");
             return;
         }
 
-        // Else we spend the EXP required, and update the economy UI tracker
-        playerSpawner.currentExp -= unlockExpCost;
-        playerSpawner.UpdateEconomyUI();
+        // Else for debug purpose, we try to buy the holder when we not enough exp to do so,
+        // dont allow the "purchase" to happen
+        // Note that this method if the player can afford the turret holder, it will automatically deduct the cost
+        // from the player's exp.
+        if (!economySystem.TrySpendExp(unlockExpCost))
+        {
+            // If the purchase fails, the method TrySpendExp will return false, 
+            // and we can log a message to the console indicating that the player cannot afford the turret holder.
+            Debug.Log("Not enough EXP to unlock holder!");
+            return;
+        }
 
         // Then we set the unlocked turret holder to be true
         isUnlocked = true;
@@ -153,6 +167,13 @@ public class TurretSlotUI : MonoBehaviour
             return;
         }
 
+        // If there is no ecomomy system, we cannot do anything, so we return
+        if (economySystem == null)
+        {
+            Debug.LogWarning("EconomySystem not assigned!");
+            return;
+        }
+
         // Eror catching, just it case it breaks
         if (turretPrefab == null || turretSpawnPoint == null)
         {
@@ -162,15 +183,15 @@ public class TurretSlotUI : MonoBehaviour
 
         // We ensure that when we want to build the turrent, we have enough money, else dont build
         // log that we dont have enough cash
-        if (playerSpawner.currentMoney < turretGoldCost)
+        // Note that this method if the player can afford the turret, it will automatically deduct the cost from 
+        // the player's gold.
+        if (!economySystem.TrySpendGold(turretGoldCost))
         {
+            // If the purchase fails, the method TrySpendGold will return false, 
+            // and we can log a message to the console indicating that the player cannot afford the turret.
             Debug.Log("Not enough gold to build turret!");
             return;
         }
-
-        // Else if we do have enought cash / money, then we pay the cost to build the turret
-        playerSpawner.currentMoney -= turretGoldCost;
-        playerSpawner.UpdateEconomyUI();
 
         // Load in the turret that we purchases
         Instantiate(turretPrefab, turretSpawnPoint.position, turretSpawnPoint.rotation);
@@ -207,26 +228,48 @@ public class TurretSlotUI : MonoBehaviour
             return;
         }
 
+        // Stop if holder is not unlocked yet
+        if (!isUnlocked)
+        {
+            return;
+        }
+
+        // Safety check
+        if (economySystem == null)
+        {
+            Debug.LogWarning("EconomySystem not assigned!");
+            return;
+        }
+
         // If turret selection is not valid, dont build the turret
         if (turretIndex < 0 || turretIndex >= turretPrefabs.Length)
         {
             return;
         }
 
+        // Check cost array
+        if (turretGoldCosts == null || turretIndex >= turretGoldCosts.Length)
+        {
+            Debug.LogWarning("Turret gold cost not assigned for turret index: " + turretIndex);
+            return;
+        }
+
+        // Check prefab
+        if (turretPrefabs[turretIndex] == null || turretSpawnPoint == null)
+        {
+            Debug.LogWarning("Turret prefab or spawn point not assigned!");
+            return;
+        }
+
         // Obtain the selected turret cost
         int cost = turretGoldCosts[turretIndex];
 
-        // see if we can purchase that turret based on what we have in gold
-        // if cannot, we dont build the turret
-        if (playerSpawner.currentMoney < cost)
+        // Try to spend gold through the economy system script.
+        if (!economySystem.TrySpendGold(cost))
         {
             Debug.Log("Not enough Gold.");
             return;
         }
-
-        // Else we build the turret and pay the price
-        playerSpawner.currentMoney -= cost;
-        playerSpawner.UpdateEconomyUI();
 
         // Show out the turret that we had selected
         Instantiate(turretPrefabs[turretIndex], turretSpawnPoint.position, turretSpawnPoint.rotation);
@@ -242,6 +285,9 @@ public class TurretSlotUI : MonoBehaviour
         {
             turretSelectionPanel.SetActive(false);
         }
+
+        // For debug purposes
+        Debug.Log("Turret built on: " + gameObject.name);
     }
     */
 }

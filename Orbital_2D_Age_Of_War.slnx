@@ -1,5 +1,6 @@
 ﻿<Solution>
   <Project Path="Game.csproj" />
   <Project Path="DOTween.Modules.csproj" />
-  <Project Path="PlayableTests.csproj" />
+  <Project Path="UnitEditorTests.csproj" />
+  <Project Path="UnitPlayableTests.csproj" />
 </Solution>

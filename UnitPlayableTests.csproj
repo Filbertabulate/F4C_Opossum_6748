@@ -18,7 +18,7 @@
     <LangVersion>9.0</LangVersion>
     <RootNamespace></RootNamespace>
     <OutputType>Library</OutputType>
-    <AssemblyName>PlayableTests</AssemblyName>
+    <AssemblyName>UnitPlayableTests</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\HealthSystemTests.cs" />
+    <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\EconomySystemPlayableTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tests\01_UnitTesting\PlayableTests\UnitPlayableTests.asmdef" />

@@ -7782,6 +7782,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: exp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: gold
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: expText
       value: 
       objectReference: {fileID: 1762487899}

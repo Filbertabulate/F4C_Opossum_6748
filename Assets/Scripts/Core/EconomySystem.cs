@@ -220,6 +220,10 @@ public class EconomySystem : MonoBehaviour
         gold = Mathf.Max(0, newGold);
         exp = Mathf.Max(0, newExp);
 
+        // Enusre that after each test state, the gold exp and timer are set to 0, just in case.
+        goldTimer = 0f;
+        expTimer = 0f;
+
         UpdateEconomyUI();
     }
 }

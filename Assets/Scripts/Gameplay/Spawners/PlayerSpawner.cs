@@ -271,7 +271,7 @@ public class PlayerSpawner : MonoBehaviour
 
     // Changed to PUBLIC so UI buttons can access it.
     // Added 'int unitIndex' so the button can specify exactly WHICH unit to spawn, rather than a random one.
-    public void QueueUnitFromUI(int unitIndex)
+    public void QueueAndSpawnUnitFromUI(int unitIndex)
     {
         // Try out the refrector method
         TryQueueToSpawnUnit(unitIndex);

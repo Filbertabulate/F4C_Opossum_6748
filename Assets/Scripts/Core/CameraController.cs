@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     // This are the settings for the zooming in and out of the map,
     // with all values being obtain via trial and error to find the best values for the game
     public float zoomSpeed = 5f;
-    public float minZoom = 3f;
+    public float minZoom = 4.5f;
     public float maxZoom = 8f;
 
     // These variables are used to store the initial Y and Z positions of the camera, 

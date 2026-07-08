@@ -36,10 +36,18 @@ public class EconomySystem : MonoBehaviour
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI expText;
 
+    [Header("Passive Generation")]
+    // Set up a boolean, like a checkbox to see if we want passive income generation to be on or not
+    // Set it to be true by default
+    [SerializeField]
+    private bool passiveOn = true;
+
     // To ensure OOP is kept, I want the gold and exp be still be readable, i.e. read only but not writeable,
     // so i will use the "=>" syntax to allow the getter to be public, but the setter as private.
     public int Gold => gold;
     public int Exp => exp;
+    // Just in case we need to see if this passive generation is on or not
+    public bool PassiveGeneration => passiveOn;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,10 +59,14 @@ public class EconomySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // For every "tick" of time, as right now we are doing passive gold and exp generation, we will call
-        // these methods to do so.
-        AddPassiveGold();
-        AddPassiveExp();
+        // Only do passive income generation if the PassiveGenerationOn button is true
+        if (passiveOn)
+        {
+            // For every "tick" of time, as right now we are doing passive gold and exp generation, we will call
+            // these methods to do so.
+            AddPassiveGold();
+            AddPassiveExp();
+        }
     }
 
     // Method to add passive gold based on the gold timer tick value defined earlier.
@@ -225,5 +237,10 @@ public class EconomySystem : MonoBehaviour
         expTimer = 0f;
 
         UpdateEconomyUI();
+    }
+
+    public void SetPassiveIncomeGenerationBox(bool condition)
+    {
+        passiveOn = condition;
     }
 }

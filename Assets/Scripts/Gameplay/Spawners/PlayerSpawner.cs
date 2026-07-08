@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using UnityEngine;
 // Old version
@@ -90,19 +91,6 @@ public class PlayerSpawner : MonoBehaviour
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
 
-    private void Awake()
-    {
-        // Load all the player unit prefabs from the Resources/PlayerUnits folder into the playerUnits array.
-        // This way we can easily add or remove player unit prefabs from the folder without having to manually 
-        // assign them in the Unity editor, which is more convenient and less error-prone.
-        // The usage of Resources.LoadAll is based on the Unity documentation, where we can load all assets of a 
-        // specific type from a folder in the Resources directory.
-        // https://docs.unity3d.com/ScriptReference/Resources.LoadAll.html
-        // As such, I had to create a folder called Resources in the Assets directory, and then create a subfolder
-        // called PlayerUnits to store all the player unit prefabs that I want to spawn in the game.
-        // playerUnits = Resources.LoadAll<GameObject>("PlayerUnits");
-    }
-
     // Update is called once per frame
     private void Update()
     {
@@ -139,6 +127,7 @@ public class PlayerSpawner : MonoBehaviour
         // Check 1: Is our base destroyed? If yes, we can't spawn.
         if (playerBaseHealth == null) 
         {
+            Debug.LogWarning("Based has been destroyed!");
             return false;
         }
 
@@ -319,9 +308,14 @@ public class PlayerSpawner : MonoBehaviour
     }
 
     // Getter methods for testing scripts later on
-     public int GetCurrentEraIndex()
+    public int GetCurrentEraIndex()
     {
         return currentEraIndex;
+    }
+
+    public String GetCurrentEraName()
+    {
+        return playerEras[currentEraIndex].eraName;
     }
 
     public float GetCooldownTimerForTesting()

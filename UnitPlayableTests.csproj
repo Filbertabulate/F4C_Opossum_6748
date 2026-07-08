@@ -49,8 +49,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.8f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\PlayerSpawnerSystemPlayableTests.cs" />
     <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\HealthSystemTests.cs" />
     <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\EconomySystemPlayableTests.cs" />
+    <Compile Include="Assets\Tests\01_UnitTesting\PlayableTests\EnemySpawnerSystemPlayableTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tests\01_UnitTesting\PlayableTests\UnitPlayableTests.asmdef" />

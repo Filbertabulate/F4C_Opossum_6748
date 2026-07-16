@@ -4,6 +4,8 @@ using UnityEngine;
 // I need to use the system collections to gain access to a Queue<T> which is how I want to 
 // queue up the units to spawn.
 using System.Collections.Generic;
+// For updating the Unit UI gold to match the correct cost of a specific unit
+using TMPro;
 // Old version
 // using UnityEngine.InputSystem;
 // We need this namespace to talk to TextMeshPro UI elements!
@@ -228,6 +230,17 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField]
     private EconomySystem economySystem;
 
+    [Header("UI References")]
+    [SerializeField]
+    // Field for updating the unit cost text so that it can be dynamic where the UI unit change can just
+    // be an image, where the era change with the image, meaning that new units of a new era should have a
+    // new / correct cost.
+    private TextMeshProUGUI unit0Cost;
+    [SerializeField]
+    private TextMeshProUGUI unit1Cost;
+    [SerializeField]
+    private TextMeshProUGUI unit2Cost;
+
     // For each unit time tracking till they have finished training
     // private float spawnCooldownTimer = 0f;
 
@@ -239,6 +252,13 @@ public class PlayerSpawner : MonoBehaviour
 
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+        // Set the initial text on the screen at startup
+        RefreshUnitCostByEraUI();
+    }
 
     // Update is called once per frame
     private void Update()
@@ -484,7 +504,68 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         currentEraIndex = eraIndex;
+        // Since we change eras, we need to update the Unit cost UI as well
+        RefreshUnitCostByEraUI();
+
         return true;
+    }
+
+    // Method to Refresh the unit cost text by the era it is at
+    private void RefreshUnitCostByEraUI()
+    {
+        // For logging purposes
+        Debug.Log($"Refreshing unit cost UI for era index: {currentEraIndex}");
+
+        // If the play era is not vaild, i.e. out of index range, we dont update the cost and throw log error
+        if (playerEras == null || currentEraIndex < 0 || currentEraIndex >= playerEras.Length)
+        {
+            Debug.LogWarning("Cannot refresh era UI: invalid era data.");
+            return;
+        }
+
+        // If not we try and get the current player units of that current Era we are at, to extract the units
+        // cost individually
+        PlayerEraData currentEra = playerEras[currentEraIndex];
+
+        // If somehow the era is valid, but there is no units inside the current Era array, we cannot update the
+        // unit cost, so we need to return nothing and give a debug warning.
+        if (currentEra == null || currentEra.units == null)
+        {
+            Debug.LogWarning("Cannot refresh era UI: current era has no unit data.");
+            return;
+        }
+
+        // For logging purposes
+        Debug.Log($"Era: {currentEra.eraName}, Unit count: {currentEra.units.Length}");
+
+        // If not we update the unit cost accordingly.
+        // Note, to make it cleaner, I am using another helper method to update the unit cost by era accordingly
+        UpdateUnitCostText(unit0Cost, currentEra.units, 0);
+        UpdateUnitCostText(unit1Cost, currentEra.units, 1);
+        UpdateUnitCostText(unit2Cost, currentEra.units, 2);
+    }
+
+    // Helper method to update the unit cost text
+    private void UpdateUnitCostText(TextMeshProUGUI costText, PlayerUnitData[] units, int unitIndex)
+    {
+        // If the textbar is not defined in this script, we cannot update any cost, so early return
+        if (costText == null)
+        {
+            // For logging purposes
+            Debug.LogError($"Unit {unitIndex} cost text is not assigned!");
+            return;
+        }
+
+        // Else if there is no cost for the current unit we are looking for, maybe an era only got 2 units
+        // while other eras has 3, then we set the cost to be blank, and return.
+        if (unitIndex < 0 || unitIndex >= units.Length || units[unitIndex] == null)
+        {
+            costText.text = "";
+            return;
+        }
+
+        // If not we update the text according the the correct unit cost of that current era we are at.
+        costText.text = units[unitIndex].goldCost.ToString();
     }
 
     // These methods are for the testing set up, i.e. to say for creating an empty object and putting in this

@@ -11,7 +11,7 @@ public class EnemyType
     [Tooltip("How many seconds between each spawn of this specific unit?")]
     public float spawnInterval; 
     
-    // --- NEW: A checkbox to decide if they spawn instantly on game start! ---
+    // A checkbox to decide if they spawn instantly on game start
     [Tooltip("Check this box if this unit should spawn immediately when the level begins.")]
     public bool spawnAtStart; 
 

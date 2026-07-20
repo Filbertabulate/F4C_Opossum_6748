@@ -9,7 +9,7 @@ using TMPro;
 // Old version
 // using UnityEngine.InputSystem;
 // We need this namespace to talk to TextMeshPro UI elements!
-
+using UnityEngine.UI; // Required for Image and Button components
 // Move the economy system to another script to better OOP.
 //using TMPro;
 
@@ -22,6 +22,7 @@ public class PlayerUnitData
     public GameObject prefab;
     public int goldCost;
     public float trainTime;
+    public Sprite unitIcon; 
 }
 
 // Creating another class to track the current era we are in so that when the era change, the PlayerUnitData
@@ -32,6 +33,7 @@ public class PlayerEraData
 {
     public string eraName;
     public PlayerUnitData[] units;
+    public int evolveExpCost; 
 }
 
 // I will create a new class called UnitProductionQueue, such that we can port over the old
@@ -241,6 +243,13 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI unit2Cost;
 
+    [SerializeField] private Image unit0Icon;
+    [SerializeField] private Image unit1Icon;
+    [SerializeField] private Image unit2Icon;
+
+    // Evolve Button reference
+    [SerializeField] private Button evolveButton;
+    [SerializeField] private TextMeshProUGUI evolveCostText;
     // For each unit time tracking till they have finished training
     // private float spawnCooldownTimer = 0f;
 
@@ -296,7 +305,34 @@ public class PlayerSpawner : MonoBehaviour
         // Try out the refrector method
         TryQueueToSpawnUnit(unitIndex);
     }
+    // This method will be triggered by your Evolve button in the UI
+    public void EvolveToNextEra()
+    {
+        // Check if there is a next era available
+        int nextEraIndex = currentEraIndex + 1;
+        if (playerEras == null || nextEraIndex >= playerEras.Length)
+        {
+            Debug.Log("Already at the maximum era!");
+            return;
+        }
 
+        // Get the EXP cost to unlock this next era
+        int costToEvolve = playerEras[nextEraIndex].evolveExpCost;
+
+        // Ensure we have the economy system and try to spend the EXP
+        if (economySystem != null && economySystem.TrySpendExp(costToEvolve))
+        {
+            // If successful, promote the era
+            TrySetEra(nextEraIndex);
+            
+            // For logging purposes
+            Debug.Log("Successfully evolved to: " + playerEras[nextEraIndex].eraName);
+        }
+        else
+        {
+            Debug.Log("Not enough EXP to evolve! Need: " + costToEvolve);
+        }
+    }
     // Refrector method to spawn the unit desired
     // Set to public so that test script can test unit spawnning if it works.
     // Note that since I am changing the queuing system, the "true" in this method now means
@@ -543,8 +579,47 @@ public class PlayerSpawner : MonoBehaviour
         UpdateUnitCostText(unit0Cost, currentEra.units, 0);
         UpdateUnitCostText(unit1Cost, currentEra.units, 1);
         UpdateUnitCostText(unit2Cost, currentEra.units, 2);
+
+        UpdateUnitIcon(unit0Icon, currentEra.units, 0);
+        UpdateUnitIcon(unit1Icon, currentEra.units, 1);
+        UpdateUnitIcon(unit2Icon, currentEra.units, 2);
+
+        UpdateEvolveButtonUI();
+    }
+    // Helper method to swap the unit portrait
+    private void UpdateUnitIcon(Image iconImage, PlayerUnitData[] units, int unitIndex)
+    {
+        if (iconImage == null) return;
+
+        if (unitIndex < 0 || unitIndex >= units.Length || units[unitIndex] == null || units[unitIndex].unitIcon == null)
+        {
+            // Hide the icon if no unit exists for this slot
+            iconImage.color = new Color(1, 1, 1, 0); // Make transparent
+            return;
+        }
+
+        // Apply the new sprite and make sure it is visible
+        iconImage.sprite = units[unitIndex].unitIcon;
+        iconImage.color = new Color(1, 1, 1, 1); // Make opaque
     }
 
+    // Helper to turn off the Evolve button if we reach the final era
+    private void UpdateEvolveButtonUI()
+    {
+        if (evolveButton == null) return;
+
+        int nextEraIndex = currentEraIndex + 1;
+        if (nextEraIndex >= playerEras.Length)
+        {
+            evolveButton.interactable = false; // Disable button on final era
+            if (evolveCostText != null) evolveCostText.text = "MAX ERA";
+        }
+        else
+        {
+            evolveButton.interactable = true;
+            if (evolveCostText != null) evolveCostText.text = playerEras[nextEraIndex].evolveExpCost.ToString() + " XP";
+        }
+    }
     // Helper method to update the unit cost text
     private void UpdateUnitCostText(TextMeshProUGUI costText, PlayerUnitData[] units, int unitIndex)
     {

@@ -1,0 +1,6 @@
+﻿<Solution>
+  <Project Path="Game.csproj" />
+  <Project Path="DOTween.Modules.csproj" />
+  <Project Path="UnitPlayableTests.csproj" />
+  <Project Path="UnitEditorTests.csproj" />
+</Solution>

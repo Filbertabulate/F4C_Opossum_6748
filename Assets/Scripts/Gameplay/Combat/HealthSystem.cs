@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     // Set up the base's health points, where this
-    // is the current health of the base/unit test commit
+    // is the current health of the base/unit
     public int hp;
 
     // Set up the unit/ base max health points, where this is the maximum health that the base/unit can have.

@@ -5278,22 +5278,17 @@ MonoBehaviour:
   - unitName: Wizard
     enemyPrefab: {fileID: 1492826417063611431, guid: ff832b3eee8ac694e91c3bdc41f12b15, type: 3}
     spawnInterval: 15
-    spawnAtStart: 0
+    spawnAtStart: 1
     currentTimer: 0
   - unitName: Magic Archer
     enemyPrefab: {fileID: 1492826417063611431, guid: f239af3f31352c5478cac93e77047967, type: 3}
     spawnInterval: 20
-    spawnAtStart: 0
+    spawnAtStart: 1
     currentTimer: 0
   - unitName: Golem
     enemyPrefab: {fileID: 1492826417063611431, guid: e6027fa3c62b6d042baa98f7d416869d, type: 3}
     spawnInterval: 30
     spawnAtStart: 0
-    currentTimer: 0
-  - unitName: Demon
-    enemyPrefab: {fileID: 1492826417063611431, guid: 8c8197819453f9f428d2ffb8c8680dd3, type: 3}
-    spawnInterval: 30
-    spawnAtStart: 1
     currentTimer: 0
   spawnPoint: {fileID: 1874513266}
   enemyBaseHealth: {fileID: 287360872}

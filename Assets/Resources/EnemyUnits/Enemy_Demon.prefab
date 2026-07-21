@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.65}
-  m_SizeDelta: {x: 1.5107, y: 0.5759}
+  m_AnchoredPosition: {x: 0.31, y: 3.86}
+  m_SizeDelta: {x: 2.9761, y: 0.7662}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &676325699709456852
 Canvas:
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2938110027077241473}
   - component: {fileID: 2105027505295555112}
   m_Layer: 8
-  m_Name: Enemy_Golem
+  m_Name: Enemy_Demon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,12 +191,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8202827640963373859, guid: 6426dddb0e5a02c45bf20abb09b1264f, type: 3}
+  m_Sprite: {fileID: -3240190119498413776, guid: e8ef960708fdd85429d9f6f04a135272, type: 3}
   m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.88, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -217,7 +217,7 @@ MonoBehaviour:
   unitDamage: 20
   attackCooldown: 2
   attackRange: 1
-  allyCollisionRange: 0.5
+  allyCollisionRange: 1
   speedTrackingRange: 2
   groundLayer:
     serializedVersion: 2
@@ -316,7 +316,7 @@ Animator:
   m_GameObject: {fileID: 1492826417063611431}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09ab403c3230d7c4983d539e912304b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa33dffc5cc54a94285c092652b286f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -439,8 +439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: 0.32}
-  m_SizeDelta: {x: 1, y: 0.2}
+  m_AnchoredPosition: {x: -0.68, y: 0.8205}
+  m_SizeDelta: {x: 0.9957, y: 0.1985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &369913765051728035
 CanvasRenderer:

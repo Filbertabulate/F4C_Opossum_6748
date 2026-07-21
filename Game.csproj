@@ -51,12 +51,14 @@
     <Compile Include="Assets\Scripts\Gameplay\Turrets\TurretAttackBox.cs" />
     <Compile Include="Assets\Scripts\Audio\SoundLibrary.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicLibrary.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Combat\MeteorStrikeAbility.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Combat\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Spawners\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\ScreenTransitions\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\ScreenTransitions\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI\AudioSettingsUI.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Combat\MeteorProjectile.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Units\UnitMove.cs" />
     <Compile Include="Assets\Scripts\Core\PauseManager.cs" />

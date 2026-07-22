@@ -22,7 +22,9 @@ public class PlayerUnitData
     public GameObject prefab;
     public int goldCost;
     public float trainTime;
-    public Sprite unitIcon; 
+
+    // No longer using this cuz I created a era base banner for the sprites
+    // public Sprite unitIcon; 
 }
 
 // Creating another class to track the current era we are in so that when the era change, the PlayerUnitData
@@ -34,6 +36,9 @@ public class PlayerEraData
     public string eraName;
     public PlayerUnitData[] units;
     public int evolveExpCost; 
+
+    // Now I will have just one sprite representing the entire UI strip
+    public Sprite unitBannerSprite;
 }
 
 // I will create a new class called UnitProductionQueue, such that we can port over the old
@@ -243,9 +248,9 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI unit2Cost;
 
-    [SerializeField] private Image unit0Icon;
-    [SerializeField] private Image unit1Icon;
-    [SerializeField] private Image unit2Icon;
+    // Now using the large Canvas Image which will contain all three unit portraits for each era
+    [SerializeField]
+    private Image unitEraBannerImage;
 
     // Evolve Button reference
     [SerializeField] private Button evolveButton;
@@ -304,34 +309,6 @@ public class PlayerSpawner : MonoBehaviour
     {
         // Try out the refrector method
         TryQueueToSpawnUnit(unitIndex);
-    }
-    // This method will be triggered by your Evolve button in the UI
-    public void EvolveToNextEra()
-    {
-        // Check if there is a next era available
-        int nextEraIndex = currentEraIndex + 1;
-        if (playerEras == null || nextEraIndex >= playerEras.Length)
-        {
-            Debug.Log("Already at the maximum era!");
-            return;
-        }
-
-        // Get the EXP cost to unlock this next era
-        int costToEvolve = playerEras[nextEraIndex].evolveExpCost;
-
-        // Ensure we have the economy system and try to spend the EXP
-        if (economySystem != null && economySystem.TrySpendExp(costToEvolve))
-        {
-            // If successful, promote the era
-            TrySetEra(nextEraIndex);
-            
-            // For logging purposes
-            Debug.Log("Successfully evolved to: " + playerEras[nextEraIndex].eraName);
-        }
-        else
-        {
-            Debug.Log("Not enough EXP to evolve! Need: " + costToEvolve);
-        }
     }
     // Refrector method to spawn the unit desired
     // Set to public so that test script can test unit spawnning if it works.
@@ -574,41 +551,102 @@ public class PlayerSpawner : MonoBehaviour
         // For logging purposes
         Debug.Log($"Era: {currentEra.eraName}, Unit count: {currentEra.units.Length}");
 
+        // Update the three unit artwork banner at one go
+        UpdateEraBannerImage(currentEra);
+
         // If not we update the unit cost accordingly.
         // Note, to make it cleaner, I am using another helper method to update the unit cost by era accordingly
         UpdateUnitCostText(unit0Cost, currentEra.units, 0);
         UpdateUnitCostText(unit1Cost, currentEra.units, 1);
         UpdateUnitCostText(unit2Cost, currentEra.units, 2);
 
-        UpdateUnitIcon(unit0Icon, currentEra.units, 0);
-        UpdateUnitIcon(unit1Icon, currentEra.units, 1);
-        UpdateUnitIcon(unit2Icon, currentEra.units, 2);
-
         UpdateEvolveButtonUI();
     }
-    // Helper method to swap the unit portrait
-    private void UpdateUnitIcon(Image iconImage, PlayerUnitData[] units, int unitIndex)
-    {
-        if (iconImage == null) return;
 
-        if (unitIndex < 0 || unitIndex >= units.Length || units[unitIndex] == null || units[unitIndex].unitIcon == null)
+    // Refractor this mehtod to now Update the Unit Era Banner instead of updating each unit, making it 
+    // look cleaner and nicer
+    private void UpdateEraBannerImage(PlayerEraData currentEra)
+    {
+        // If there is no canvas Banner UI defined, then we cannot even update the "banner"
+        if (unitEraBannerImage == null)
         {
-            // Hide the icon if no unit exists for this slot
-            iconImage.color = new Color(1, 1, 1, 0); // Make transparent
+            Debug.LogWarning("Unit era banner Image is not assigned!");
             return;
         }
 
-        // Apply the new sprite and make sure it is visible
-        iconImage.sprite = units[unitIndex].unitIcon;
-        iconImage.color = new Color(1, 1, 1, 1); // Make opaque
+        // If we did not assign the unit Banner sprite for the current era we are in, we cannot update
+        // any image.
+        if (currentEra == null || currentEra.unitBannerSprite == null)
+        {
+            Debug.LogWarning("Current era does not have a unit banner sprite.");
+
+            // Hide the Image when no sprite is assigned
+            unitEraBannerImage.sprite = null;
+            // Make it transparent, for debugging purposes for now
+            unitEraBannerImage.color = new Color(1f, 1f, 1f, 0f);
+            return;
+        }
+
+        // If not if there is a era sprite image, replace the current banner with the banner for the new era
+        unitEraBannerImage.sprite = currentEra.unitBannerSprite;
+
+        // Ensure the Image is visible
+        unitEraBannerImage.color = Color.white;
+
+        // Just for debugging purposes
+        Debug.Log($"Updated unit banner to era: {currentEra.eraName}");
+    }
+
+    // Add in a evolve to next era helper function to keep track of the current era we are at, also how much
+    // xp we need to evolve to the next era based on what we defined for evolve xp on this current era
+    public void EvolveToNextEra()
+    {
+        // This method will be triggered by your Evolve button in the UI
+    
+        // Check if there is a next era available
+        int nextEraIndex = currentEraIndex + 1;
+        
+        if (playerEras == null || nextEraIndex >= playerEras.Length)
+        {
+            Debug.Log("Already at the maximum era!");
+            return;
+        }
+
+        // Get the EXP cost requirement of this current era to upgrade to the next era
+        int costToEvolve = playerEras[currentEraIndex].evolveExpCost;
+
+        // Ensure we have the economy system
+        if (economySystem == null)
+        {
+            Debug.LogWarning("EconomySystem not assigned!");
+            return;
+        }
+
+        // If we do, try and spend the exp cost based on what is defined on the amount of exp needed to
+        // upgrade to the next era
+        if (economySystem.TrySpendExp(costToEvolve))
+        {
+            TrySetEra(nextEraIndex);
+
+            // For logging purposes
+            Debug.Log("Successfully evolved to: " + playerEras[nextEraIndex].eraName);
+        }
+        else
+        {
+            Debug.Log("Not enough EXP to evolve! Need: " + costToEvolve);
+        }
     }
 
     // Helper to turn off the Evolve button if we reach the final era
     private void UpdateEvolveButtonUI()
     {
-        if (evolveButton == null) return;
+        if (evolveButton == null) 
+        {
+            return;
+        }
 
         int nextEraIndex = currentEraIndex + 1;
+
         if (nextEraIndex >= playerEras.Length)
         {
             evolveButton.interactable = false; // Disable button on final era
@@ -617,7 +655,7 @@ public class PlayerSpawner : MonoBehaviour
         else
         {
             evolveButton.interactable = true;
-            if (evolveCostText != null) evolveCostText.text = playerEras[nextEraIndex].evolveExpCost.ToString() + " XP";
+            if (evolveCostText != null) evolveCostText.text = playerEras[currentEraIndex].evolveExpCost.ToString();
         }
     }
     // Helper method to update the unit cost text

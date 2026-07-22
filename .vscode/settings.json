@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "F4C_Opossum_6748.slnx",
+    "dotnet.defaultSolution": "Orbital_2D_Age_Of_War.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }

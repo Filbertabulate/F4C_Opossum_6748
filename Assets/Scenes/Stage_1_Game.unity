@@ -3026,6 +3026,8 @@ MonoBehaviour:
       goldCost: 50
       trainTime: 3
     evolveExpCost: 500
+    meteorExpCost: 250
+    numberOfMeteors: 60
     unitBannerSprite: {fileID: 2046583442744583313, guid: 6fb9216188cb7624491b017907bd55f4, type: 3}
   - eraName: Undead
     units:
@@ -3042,6 +3044,8 @@ MonoBehaviour:
       goldCost: 75
       trainTime: 3
     evolveExpCost: 0
+    meteorExpCost: 500
+    numberOfMeteors: 125
     unitBannerSprite: {fileID: -6721027334152931902, guid: e927b0853dc18c84cb64728be4fdabc5, type: 3}
   currentEraIndex: 0
   spawnPoint: {fileID: 798795695}
@@ -3054,6 +3058,8 @@ MonoBehaviour:
   unitEraBannerImage: {fileID: 1785408301}
   evolveButton: {fileID: 638409407}
   evolveCostText: {fileID: 1009201180}
+  meteorStrikeAbility: {fileID: 798795697}
+  meteorExpCostText: {fileID: 2067033301}
 --- !u!114 &798795697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,11 +3073,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game::MeteorStrikeAbility
   meteorPrefab: {fileID: 9012755512891709300, guid: 4cbd9b9258d8e4d4bb9ac48e92f55182, type: 3}
-  goldCost: 100
-  numberOfMeteors: 100
-  spawnAreaWidth: 69
-  spawnHeight: 12
+  currentMeteorExpCost: 250
+  currentNumberOfMeteors: 125
   delayBetweenSpawns: 0.1
+  spawnHeight: 12
+  horizontalPadding: 0.5
+  metorStrikeArea: 0
+  playerBaseColliderSpace: {fileID: 1698718120}
+  enemyBaseColliderSpace: {fileID: 446494359}
   economySystem: {fileID: 865086226}
 --- !u!1 &854626133
 GameObject:
@@ -5724,6 +5733,17 @@ MonoBehaviour:
             m_StringArgument: Click
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2067033301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2377753001855113187, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+  m_PrefabInstance: {fileID: 4467556759526142929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &2080860457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6101,6 +6121,14 @@ PrefabInstance:
     - target: {fileID: 2150956368914596273, guid: e88e0b3f268756d4d85d4231ed461f23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109340211338656796, guid: e88e0b3f268756d4d85d4231ed461f23, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401520627809554086, guid: e88e0b3f268756d4d85d4231ed461f23, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6568,6 +6596,10 @@ PrefabInstance:
     - target: {fileID: 6129947660360407905, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356827546720487157, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_Name
+      value: Exp_Cost
       objectReference: {fileID: 0}
     - target: {fileID: 6575149347906746668, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
       propertyPath: m_IsActive
@@ -7214,7 +7246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: exp
-      value: 500
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: gold

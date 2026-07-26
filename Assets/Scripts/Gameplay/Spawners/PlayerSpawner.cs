@@ -35,7 +35,16 @@ public class PlayerEraData
 {
     public string eraName;
     public PlayerUnitData[] units;
-    public int evolveExpCost; 
+    
+    [Header("Era Costs")]
+    public int evolveExpCost;
+
+    [Header("Meteor Ability")]
+    [Min(0)]
+    public int meteorExpCost = 250;
+    [Min(1)]
+    public int numberOfMeteors = 125;
+
 
     // Now I will have just one sprite representing the entire UI strip
     public Sprite unitBannerSprite;
@@ -257,10 +266,17 @@ public class PlayerSpawner : MonoBehaviour
     private Image unitEraBannerImage;
 
     // Evolve Button reference
-    [SerializeField] private Button evolveButton;
-    [SerializeField] private TextMeshProUGUI evolveCostText;
-    // For each unit time tracking till they have finished training
-    // private float spawnCooldownTimer = 0f;
+    [SerializeField] 
+    private Button evolveButton;
+    [SerializeField] 
+    private TextMeshProUGUI evolveCostText;
+    
+    [Header("Meteor Ability UI")]
+    // For referencing to update the script and gold cost txt
+    [SerializeField]
+    private MeteorStrikeAbility meteorStrikeAbility;
+    [SerializeField]
+    private TextMeshProUGUI meteorExpCostText;
 
     // Changing the spawnCooldownTimer float to now beocme a dedicated UnitProductionQueue instance.
     // As such, what I am trying to change is instead of a "Am I (player) currently on a cooldown (yes / no)",
@@ -270,6 +286,14 @@ public class PlayerSpawner : MonoBehaviour
 
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
+
+    // Public read-only information about the current era.
+    public int CurrentEraIndex => currentEraIndex;
+    public string CurrentEraName => GetCurrentEraData()?.eraName ?? string.Empty;
+
+    // Public read-only meteor information for the current era.
+    public int CurrentMeteorExpCost => GetCurrentEraData()?.meteorExpCost ?? 0;
+    public int CurrentNumberOfMeteors => GetCurrentEraData()?.numberOfMeteors ?? 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -459,6 +483,22 @@ public class PlayerSpawner : MonoBehaviour
         return true;
     }
 
+    // This methods helps to safely retrieves the current player era.
+    private PlayerEraData GetCurrentEraData()
+    {
+        if (playerEras == null || playerEras.Length == 0)
+        {
+            return null;
+        }
+
+        if (currentEraIndex < 0 || currentEraIndex >= playerEras.Length)
+        {
+            return null;
+        }
+
+        return playerEras[currentEraIndex];
+    }
+
     // Helper method to get the specific PlayerUnitData based on era the player is currently on
     private PlayerUnitData GetCurrentEraUnit(int unitIndex)
     {
@@ -587,6 +627,7 @@ public class PlayerSpawner : MonoBehaviour
         UpdateUnitCostText(unit2Cost, currentEra.units, 2);
 
         UpdateEvolveButtonUI();
+        UpdateMeteorAbilityUI(currentEra);
     }
 
     // Refractor this mehtod to now Update the Unit Era Banner instead of updating each unit, making it 
@@ -684,6 +725,47 @@ public class PlayerSpawner : MonoBehaviour
             if (evolveCostText != null) evolveCostText.text = playerEras[currentEraIndex].evolveExpCost.ToString();
         }
     }
+
+    // This method sends the current era's meteor settings to MeteorStrikeAbility and refreshes the cost text.
+    private void UpdateMeteorAbilityUI(PlayerEraData currentEra)
+    {
+        if (currentEra == null)
+        {
+            Debug.LogWarning("Cannot update meteor ability: current era is null.");
+
+            // As such, the metor (special skill) text cost should be blank
+            if (meteorExpCostText != null)
+            {
+                meteorExpCostText.text = "";
+            }
+
+            return;
+        }
+
+        // Else if there is a metor strike script, update the data of the metor strike based on the values found
+        // from the current era we are in
+        if (meteorStrikeAbility != null)
+        {
+            meteorStrikeAbility.ConfigureForEra(currentEra.meteorExpCost, currentEra.numberOfMeteors);
+        }
+        else
+        {
+            // Log the error otherwise
+            Debug.LogWarning("MeteorStrikeAbility is not assigned to PlayerSpawner.");
+        }
+
+        // Likewise for the exp cost text, since there is a valid era, we see if we have a metor text assgined,
+        // in which we update the text value accordingly.
+        if (meteorExpCostText != null)
+        {
+            meteorExpCostText.text = currentEra.meteorExpCost.ToString();
+        }
+        else
+        {
+            Debug.LogWarning("Meteor EXP cost text is not assigned to PlayerSpawner.");
+        }
+    }
+
     // Helper method to update the unit cost text
     private void UpdateUnitCostText(TextMeshProUGUI costText, PlayerUnitData[] units, int unitIndex)
     {
@@ -731,7 +813,7 @@ public class PlayerSpawner : MonoBehaviour
 
     public String GetCurrentEraName()
     {
-        return playerEras[currentEraIndex].eraName;
+         return GetCurrentEraData()?.eraName ?? string.Empty;
     }
 
     // Keep the same name so that the test scripts would not complain as much

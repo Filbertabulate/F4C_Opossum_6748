@@ -60,11 +60,13 @@
     <Compile Include="Assets\Scripts\UI\GameUI\AudioSettingsUI.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Combat\MeteorProjectile.cs" />
+    <Compile Include="Assets\Scripts\UI\GameUI\FloatingGoldText.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Units\UnitMove.cs" />
     <Compile Include="Assets\Scripts\Core\PauseManager.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI\TurretSlotUI.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Combat\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Core\TurretManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Spawners\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Turrets\TurretArcProjectile.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI\HealthBarUI.cs" />

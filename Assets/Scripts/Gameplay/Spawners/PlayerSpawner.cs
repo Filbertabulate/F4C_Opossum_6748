@@ -237,6 +237,10 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField]
     private EconomySystem economySystem;
 
+    [Header("Era Dependencies")]
+    [SerializeField]
+    private TurretManager turretManager;
+
     [Header("UI References")]
     [SerializeField]
     // Field for updating the unit cost text so that it can be dynamic where the UI unit change can just
@@ -516,9 +520,31 @@ public class PlayerSpawner : MonoBehaviour
             return false;
         }
 
+        // Just to ensure that the inner data is also valid here, not just an empty next era that was defined.
+        PlayerEraData requestedEra = playerEras[eraIndex];
+
+        if (requestedEra == null)
+        {
+            Debug.LogWarning($"Player era {eraIndex} is not assigned!");
+
+            return false;
+        }
+
         currentEraIndex = eraIndex;
         // Since we change eras, we need to update the Unit cost UI as well
         RefreshUnitCostByEraUI();
+
+        // Update the turret system to the matching era.
+        if (turretManager != null)
+        {
+            turretManager.TrySetEra(eraIndex);
+        }
+        else
+        {
+            
+            // For logging purposes
+            Debug.LogWarning("TurretManager is not assigned to PlayerSpawner!");
+        }
 
         return true;
     }
@@ -650,7 +676,7 @@ public class PlayerSpawner : MonoBehaviour
         if (nextEraIndex >= playerEras.Length)
         {
             evolveButton.interactable = false; // Disable button on final era
-            if (evolveCostText != null) evolveCostText.text = "MAX ERA";
+            if (evolveCostText != null) evolveCostText.text = "MAX";
         }
         else
         {

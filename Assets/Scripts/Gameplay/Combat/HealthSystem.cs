@@ -21,6 +21,9 @@ public class HealthSystem : MonoBehaviour
     // when the base/unit takes damage.
     private HealthBarUI healthBar;
 
+    // Prevent the death logic from running more than once.
+    private bool isDead = false;
+
     // Initialise the HP of the unit/base to the max HP at the start of the game, 
     // and also set the max health value of the health bar UI to the max HP of the unit/base.
     // I use awake since this thing does not need reference to other game objects.
@@ -43,6 +46,19 @@ public class HealthSystem : MonoBehaviour
     // it will print a message saying that the enemy base is destroyed.
     public void TakeDamage(int damage)
     {
+        // A dead unit should not receive more damage or trigger death again.
+        if (isDead)
+        {
+            return;
+        }
+
+        // Ignore invalid damage values.
+        if (damage <= 0)
+        {
+            return;
+        }
+
+        
         // Reduce the hp by the damage amount and print the current hp to the console.
         hp -= damage;
 
@@ -63,9 +79,15 @@ public class HealthSystem : MonoBehaviour
         // since they have been defeated.
         if (hp <= 0)
         {
+            // Mark the object as dead immediately.
+            //
+            // Unity's Destroy() happens at the end of the frame, so without this check, multiple attacks could 
+            // trigger UnitDeath() before destruction.
+            isDead = true;
+            
             // Since the unit hp is now less that or equal to 0, the unit should be considered as dead.
             Debug.Log(gameObject.name + " destroyed!");
-            Destroy(gameObject);
+            UnitDeath();
         }
     }
 
@@ -73,6 +95,20 @@ public class HealthSystem : MonoBehaviour
     // we can call this method to increase the hp of the unit, only applicable to units, not base.
     public void HealDamage(int healingAmount)
     {
+        // Do not allow an object that has already died to be healed.
+        //
+        // Destroy() happens at the end of the frame, so the object may
+        // still temporarily exist after UnitDeath() has been called.
+        if (isDead)
+        {
+            return;
+        }
+
+        // Ignore zero or negative healing values.
+        if (healingAmount <= 0)
+        {
+            return;
+        }        
         // If the unit detected cannot be healed, then we debug saying unit cannot be healed, and return.
         // i.e. dont do anything.
         if (!canBeHealed)
@@ -95,6 +131,36 @@ public class HealthSystem : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetHealth(hp);
+        }
+    }
+
+    // This helper methods is for destroying the unit instance, and also check if the unit that has been destroyed
+    // has some value back for the player.
+    private void UnitDeath()
+    {
+        // Check whether the dying object is a movable unit.
+        //
+        // Bases do not have UnitMove, so they will not grant unit rewards.
+        UnitMove unitMove = GetComponentInParent<UnitMove>();
+
+        if (unitMove != null)
+        {
+            // Allow the dying enemy unit to award its configured resources.
+            unitMove.GrantDeathReward();
+
+            // Destroy the main unit object containing UnitMove.
+            //
+            // This is safer than transform.root because the unit may be stored
+            // beneath another parent object in the scene hierarchy.
+            Destroy(unitMove.gameObject);
+        }
+        else
+        {
+            // No UnitMove was found, so this is probably a base or another
+            // non-moving object.
+            //
+            // Destroy only the object containing this HealthSystem.
+            Destroy(gameObject);
         }
     }
 

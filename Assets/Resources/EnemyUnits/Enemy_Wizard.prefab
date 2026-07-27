@@ -114,9 +114,9 @@ GameObject:
   - component: {fileID: 8692062753344777454}
   - component: {fileID: 2465380104223899185}
   - component: {fileID: 9189322256928044901}
+  - component: {fileID: 2938110027077241473}
   - component: {fileID: 5060604463027239730}
   - component: {fileID: 2342206082353076527}
-  - component: {fileID: 2938110027077241473}
   - component: {fileID: 816602198756722116}
   m_Layer: 8
   m_Name: Enemy_Wizard
@@ -213,19 +213,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925394b3420dba14aa11c848b03d6ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 2
-  unitDamage: 10
-  attackCooldown: 1
+  speed: 0.95
+  unitDamage: 20
+  attackCooldown: 1.2
   attackRange: 1
   allyCollisionRange: 0.5
+  speedTrackingRange: 2
+  goldReward: 60
+  expReward: 25
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
   groundCheck: {fileID: 5157057414110487253}
+  economySystem: {fileID: 0}
   isRanged: 0
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+--- !u!114 &2938110027077241473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492826417063611431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  hp: 120
+  maxHp: 120
+  canBeHealed: 1
+  healthBar: {fileID: 1278512921498599606}
 --- !u!50 &5060604463027239730
 Rigidbody2D:
   serializedVersion: 5
@@ -289,21 +309,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &2938110027077241473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492826417063611431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  hp: 100
-  maxHp: 100
-  healthBar: {fileID: 1278512921498599606}
 --- !u!95 &816602198756722116
 Animator:
   serializedVersion: 7
@@ -496,6 +501,7 @@ MonoBehaviour:
   healthBarWidth: 1
   healthBarHeight: 0.2
   healthBar: {fileID: 4103020240553513715}
+  hpText: {fileID: 0}
 --- !u!1 &4969055398983843591
 GameObject:
   m_ObjectHideFlags: 0

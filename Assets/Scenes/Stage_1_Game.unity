@@ -947,8 +947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  hp: 500
-  maxHp: 500
+  hp: 1000
+  maxHp: 1000
   canBeHealed: 0
   healthBar: {fileID: 605624551}
 --- !u!1 &292970609 stripped
@@ -1467,11 +1467,14 @@ MonoBehaviour:
   attackRange: 1
   allyCollisionRange: 0.5
   speedTrackingRange: 2
+  goldReward: 0
+  expReward: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
   groundCheck: {fileID: 682580251}
+  economySystem: {fileID: 0}
   isRanged: 0
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
@@ -3011,42 +3014,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerEras:
-  - eraName: Medieval
-    units:
-    - unitName: Medieval Swordman
-      prefab: {fileID: 585359228010224065, guid: 07c2daf15b93cd344a29a70a825e79c0, type: 3}
-      goldCost: 10
-      trainTime: 1
-    - unitName: Medieval Archer
-      prefab: {fileID: 585359228010224065, guid: 1a79983bb9715034ab88fba95971dd4c, type: 3}
-      goldCost: 25
-      trainTime: 1.5
-    - unitName: Medieval Magic Swordman
-      prefab: {fileID: 585359228010224065, guid: 5d62a925faeff904baa41646b2f83a3e, type: 3}
-      goldCost: 50
-      trainTime: 3
-    evolveExpCost: 500
-    meteorExpCost: 250
-    numberOfMeteors: 60
-    unitBannerSprite: {fileID: 2046583442744583313, guid: 6fb9216188cb7624491b017907bd55f4, type: 3}
   - eraName: Undead
     units:
     - unitName: Slime
       prefab: {fileID: 585359228010224065, guid: 3c22df86c3a31304697c70faef7f037b, type: 3}
-      goldCost: 20
+      goldCost: 50
       trainTime: 1
     - unitName: Orc
       prefab: {fileID: 585359228010224065, guid: 8bff89e88cd19ae45a0b9a2778e3af6d, type: 3}
-      goldCost: 50
-      trainTime: 1.5
+      goldCost: 90
+      trainTime: 2
     - unitName: Skeleton
       prefab: {fileID: 585359228010224065, guid: a99f34d940eaf0b4a94927aa51162aef, type: 3}
-      goldCost: 75
+      goldCost: 120
       trainTime: 3
+    evolveExpCost: 500
+    meteorExpCost: 250
+    numberOfMeteors: 60
+    unitBannerSprite: {fileID: -6721027334152931902, guid: e927b0853dc18c84cb64728be4fdabc5, type: 3}
+  - eraName: Medieval
+    units:
+    - unitName: Medieval Swordman
+      prefab: {fileID: 585359228010224065, guid: 07c2daf15b93cd344a29a70a825e79c0, type: 3}
+      goldCost: 140
+      trainTime: 2
+    - unitName: Medieval Archer
+      prefab: {fileID: 585359228010224065, guid: 1a79983bb9715034ab88fba95971dd4c, type: 3}
+      goldCost: 180
+      trainTime: 3
+    - unitName: Medieval Magic Swordman
+      prefab: {fileID: 585359228010224065, guid: 5d62a925faeff904baa41646b2f83a3e, type: 3}
+      goldCost: 250
+      trainTime: 4
     evolveExpCost: 0
     meteorExpCost: 500
     numberOfMeteors: 125
-    unitBannerSprite: {fileID: -6721027334152931902, guid: e927b0853dc18c84cb64728be4fdabc5, type: 3}
+    unitBannerSprite: {fileID: 2046583442744583313, guid: 6fb9216188cb7624491b017907bd55f4, type: 3}
   currentEraIndex: 0
   spawnPoint: {fileID: 798795695}
   playerBaseHealth: {fileID: 1684201522}
@@ -3121,11 +3124,6 @@ RectTransform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1173747061056058870, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
   m_PrefabInstance: {fileID: 4467556759526142929}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &862445644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3034117086512186017, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-  m_PrefabInstance: {fileID: 5581707837748952028}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &865086226 stripped
 MonoBehaviour:
@@ -4466,7 +4464,6 @@ Transform:
   m_Children:
   - {fileID: 256705084}
   - {fileID: 509226361}
-  - {fileID: 5581707837748952029}
   m_Father: {fileID: 9207430820321474938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1684201522
@@ -4481,8 +4478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  hp: 500
-  maxHp: 500
+  hp: 1000
+  maxHp: 1000
   canBeHealed: 0
   healthBar: {fileID: 550705682}
 --- !u!1 &1698718118
@@ -5089,11 +5086,14 @@ MonoBehaviour:
   attackRange: 1
   allyCollisionRange: 0.5
   speedTrackingRange: 2
+  goldReward: 0
+  expReward: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   spawnOrder: 0
   groundCheck: {fileID: 1038237959}
+  economySystem: {fileID: 0}
   isRanged: 0
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
@@ -5226,22 +5226,22 @@ MonoBehaviour:
   - unitName: Wizard
     enemyPrefab: {fileID: 1492826417063611431, guid: ff832b3eee8ac694e91c3bdc41f12b15, type: 3}
     spawnInterval: 15
-    spawnAtStart: 0
+    spawnAtStart: 1
     currentTimer: 0
   - unitName: Magic Archer
     enemyPrefab: {fileID: 1492826417063611431, guid: f239af3f31352c5478cac93e77047967, type: 3}
     spawnInterval: 20
-    spawnAtStart: 0
+    spawnAtStart: 1
     currentTimer: 0
   - unitName: Golem
     enemyPrefab: {fileID: 1492826417063611431, guid: e6027fa3c62b6d042baa98f7d416869d, type: 3}
-    spawnInterval: 30
+    spawnInterval: 40
     spawnAtStart: 0
     currentTimer: 0
   - unitName: Demon
     enemyPrefab: {fileID: 1492826417063611431, guid: 8c8197819453f9f428d2ffb8c8680dd3, type: 3}
-    spawnInterval: 30
-    spawnAtStart: 1
+    spawnInterval: 200
+    spawnAtStart: 0
     currentTimer: 0
   spawnPoint: {fileID: 1874513266}
   enemyBaseHealth: {fileID: 287360872}
@@ -6135,11 +6135,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88e0b3f268756d4d85d4231ed461f23, type: 3}
---- !u!4 &1281645981289476369 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9074384863169766852, guid: e88e0b3f268756d4d85d4231ed461f23, type: 3}
-  m_PrefabInstance: {fileID: 1281645981289476368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1341260181239442496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7066,8 +7061,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 168857486}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
-      propertyPath: turretEras.Array.data[1].eraName
+      propertyPath: turretEras.Array.data[0].eraName
       value: Undead
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
+      propertyPath: turretEras.Array.data[1].eraName
+      value: Medieval
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[0].turrets.Array.size
@@ -7090,108 +7089,42 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
+      propertyPath: turretEras.Array.data[0].turrets.Array.data[0].turretName
+      value: Basic_Crossbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[0].turrets.Array.data[1].turretName
-      value: Catapult
+      value: Rapid Crossbow
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[1].turrets.Array.data[0].turretName
-      value: Crossbow
+      value: Heavy Crossbow
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[1].turrets.Array.data[1].turretName
-      value: Catapult
+      value: Rapid Heavy Crossbow
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[0].turrets.Array.data[0].turretPrefab
       value: 
-      objectReference: {fileID: 862445644}
+      objectReference: {fileID: 3034117086512186017, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[0].turrets.Array.data[1].turretPrefab
       value: 
-      objectReference: {fileID: 862445644}
+      objectReference: {fileID: 3034117086512186017, guid: ccd5ad72a69aa164facc1ac677079bb3, type: 3}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[1].turrets.Array.data[0].turretPrefab
       value: 
-      objectReference: {fileID: 862445644}
+      objectReference: {fileID: 3034117086512186017, guid: e8e921b5274efcd40a2517815ebb5f30, type: 3}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[1].turrets.Array.data[1].turretPrefab
       value: 
-      objectReference: {fileID: 862445644}
+      objectReference: {fileID: 3034117086512186017, guid: 99a17a2968cd6844fa84daf82950b024, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
---- !u!1001 &5581707837748952028
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1684201521}
-    m_Modifications:
-    - target: {fileID: 1117948564261612099, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: groundReference
-      value: 
-      objectReference: {fileID: 1281645981289476369}
-    - target: {fileID: 3034117086512186017, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_Name
-      value: Turret_1_Crossbow
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034117086512186017, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.773
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.618
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
---- !u!4 &5581707837748952029 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5811834914914425859, guid: d1d2fd467f2232f4581af7cd38df262b, type: 3}
-  m_PrefabInstance: {fileID: 5581707837748952028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6045265572001575489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7246,11 +7179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: exp
-      value: 5000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: gold
-      value: 5000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: expText
@@ -7260,6 +7193,26 @@ PrefabInstance:
       propertyPath: goldText
       value: 
       objectReference: {fileID: 670547576}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: passiveOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: expInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: goldInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: passiveExpAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
+      propertyPath: passiveGoldAmount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

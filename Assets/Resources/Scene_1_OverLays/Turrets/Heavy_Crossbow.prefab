@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1117948564261612099}
   - component: {fileID: 4229927407010587649}
   m_Layer: 7
-  m_Name: Turret_1_Crossbow
+  m_Name: Heavy_Crossbow
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4955d8e74a453414f8e315aa0ef8567f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretAttackBox
-  attackRange: 10
-  attackCooldown: 2
-  damage: 20
+  attackRange: 7
+  attackCooldown: 1
+  damage: 35
   animator: {fileID: 4229927407010587649}
   firePoint: {fileID: 3397423621620208897}
   projectilePrefab: {fileID: 7638196102671584062, guid: 943fdc522fe0fd345b83988996064b5e, type: 3}

@@ -25,6 +25,18 @@ public class UnitMove : MonoBehaviour
     // This is for tracking the range of the ally unit in front of us, so that we can move at the same speed as them, to prevent animation issues.
     public float speedTrackingRange = 2f;
 
+    [Header("Enemy Death Rewards")]
+    [Tooltip("Amount of gold awarded to the player when this enemy unit dies.")]
+    [SerializeField]
+    private int goldReward = 0;
+
+    [Tooltip("Amount of EXP awarded to the player when this enemy unit dies.")]
+    [SerializeField]
+    private int expReward = 0;
+
+    // Prevents the same enemy from awarding its resources more than once.
+    private bool hasRewardBeenGranted = false;
+
     // Set up the ground layer, which will be used to check if the unit has landed on the ground or not,
     // for deployment purposes.
     public LayerMask groundLayer;
@@ -85,6 +97,9 @@ public class UnitMove : MonoBehaviour
     [Header("References")]
     public Transform groundCheck;
 
+    // Cached reference to the player's economy system.
+    [SerializeField] private EconomySystem economySystem;
+
     [Header("Ranged Combat Settings")]
     public bool isRanged = false; 
     public GameObject projectilePrefab; 
@@ -96,7 +111,13 @@ public class UnitMove : MonoBehaviour
     // which is based on the tag of the unit itself.
     private void Awake()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        // Locate the player's EconomySystem once and store the reference.
+        //
+        // We only use this reference when an enemy unit dies, but caching it here
+        // prevents us from repeatedly searching for the EconomySystem later.
+        // It is fine to use FindAnyObjectByType since our enconomysystem comes from an economy manager, which
+        // is a singleton (manager)
+        economySystem = FindAnyObjectByType<EconomySystem>();
 
         // Get the layer number of the current unit layer its on, that way all ally units in that layers 
         // will be detected as allies,
@@ -725,6 +746,55 @@ public class UnitMove : MonoBehaviour
             // the hp left of the target in the console.
             Debug.Log(gameObject.name + " melee attacked " + targetHealth.gameObject.name);
         }
+    }
+
+    // This method will be called by HealthSystem immediately before this unit is destroyed.
+    // This is set up suc h that the reward belongs to the unit that died, rather than the unit that dealt
+    // the final hit. This means melee attacks, ranged attacks, turrets and special
+    // abilities can all kill the unit without needing separate reward logic.
+    public void GrantDeathReward()
+    {
+        // Only enemy units should award resources to the player.
+        //
+        // Player units also use UnitMove, but the player should not receive
+        // resources when one of their own units dies.
+        if (!gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        // Prevent the reward from being granted more than once.
+        //
+        // This protects against multiple attacks reaching the unit during the
+        // same frame or the death method accidentally being called twice.
+        if (hasRewardBeenGranted)
+        {
+            return;
+        }
+
+        hasRewardBeenGranted = true;
+
+        // Try to locate the EconomySystem again if it was not available during Awake.
+        //
+        // This can happen if the EconomySystem is instantiated after this enemy.
+        if (economySystem == null)
+        {
+            economySystem = FindAnyObjectByType<EconomySystem>();
+        }
+
+        // Without an EconomySystem, there is nowhere to add the reward.
+        if (economySystem == null)
+        {
+            Debug.LogWarning(gameObject.name + " died, but no EconomySystem was found. No reward was granted.");
+
+            return;
+        }
+
+        // Add this enemy unit's configured gold and EXP rewards.
+        economySystem.AwardResources(goldReward, expReward);
+
+        // For logging purposes
+        Debug.Log(gameObject.name + " defeated. Player received " + goldReward + " gold and " + expReward + " EXP.");
     }
 
     // Need to obtain the spawn order so that the turrent target knows which unit it should target first

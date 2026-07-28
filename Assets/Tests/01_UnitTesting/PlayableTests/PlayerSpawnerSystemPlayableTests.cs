@@ -57,6 +57,10 @@ public class PlayerSpawnerSystemPlayableTests
         spawnerObject = new GameObject("PlayerSpawner");
         spawner = spawnerObject.AddComponent<PlayerSpawner>();
 
+        // These tests verify spawning, queueing, economy and era behaviour.
+        // They do not construct the complete gameplay Canvas.
+        spawner.SetUIRefreshDisabledForTesting(true);
+
         // Creating a sepeare object to store the economy system script, i.e. in this case would be the economy
         // manager object
         economyObject = new GameObject("EconomySystem");

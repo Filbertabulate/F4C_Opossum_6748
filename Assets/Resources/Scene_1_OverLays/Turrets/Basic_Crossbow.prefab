@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4955d8e74a453414f8e315aa0ef8567f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretAttackBox
-  attackRange: 6
-  attackCooldown: 1.5
-  damage: 12
+  attackRange: 9
+  attackCooldown: 1.2
+  damage: 16
   animator: {fileID: 4229927407010587649}
   firePoint: {fileID: 3397423621620208897}
   projectilePrefab: {fileID: 7638196102671584062, guid: 943fdc522fe0fd345b83988996064b5e, type: 3}

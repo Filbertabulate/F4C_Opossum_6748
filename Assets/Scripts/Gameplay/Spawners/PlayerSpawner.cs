@@ -287,6 +287,10 @@ public class PlayerSpawner : MonoBehaviour
     // Since I need to differentiate which unit comes first, I need a tracker to tag each spawned unit
     private long nextSpawnOrder = 0;
 
+    // Used by automated gameplay tests that do not create the full Canvas UI.
+    // This skips only UI refreshes, where spawning, economy, queueing and era logic continue operating normally.
+    private bool skipUIRefreshForTesting = false;
+
     // Public read-only information about the current era.
     public int CurrentEraIndex => currentEraIndex;
     public string CurrentEraName => GetCurrentEraData()?.eraName ?? string.Empty;
@@ -298,8 +302,13 @@ public class PlayerSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        // Set the initial text on the screen at startup
-        RefreshUnitCostByEraUI();
+        // This is done to prtect the testing scripts so that there is not need for UI refresh for player spawner
+        // Testing scripts
+        if (!skipUIRefreshForTesting)
+        {
+            // Set the initial text on the screen at startup
+            RefreshUnitCostByEraUI();
+        }
     }
 
     // Update is called once per frame
@@ -571,8 +580,13 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         currentEraIndex = eraIndex;
-        // Since we change eras, we need to update the Unit cost UI as well
-        RefreshUnitCostByEraUI();
+        
+        // To prevent the need to defined UI object during play mode testing
+        if (!skipUIRefreshForTesting)
+        {
+            // Since we change eras, we need to update the Unit cost UI as well
+            RefreshUnitCostByEraUI();
+        }
 
         // Update the turret system to the matching era.
         if (turretManager != null)
@@ -803,6 +817,11 @@ public class PlayerSpawner : MonoBehaviour
         spawnPoint = testSpawnPoint;
         playerBaseHealth = testPlayerBaseHealth;
         economySystem = testEconomySystem;
+    }
+
+    public void SetUIRefreshDisabledForTesting(bool shouldDisable)
+    {
+        skipUIRefreshForTesting = shouldDisable;
     }
 
     // Getter methods for testing scripts later on

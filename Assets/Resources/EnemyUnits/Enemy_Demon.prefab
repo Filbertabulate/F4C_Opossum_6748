@@ -216,11 +216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 0.65
   unitDamage: 45
-  attackCooldown: 1.5
+  attackCooldown: 1.2
   attackRange: 2
   allyCollisionRange: 2
   speedTrackingRange: 2
-  goldReward: 450
+  goldReward: 1000
   expReward: 200
   groundLayer:
     serializedVersion: 2
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7c42e297b4de345a644e3936785638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  hp: 900
-  maxHp: 900
+  hp: 950
+  maxHp: 950
   canBeHealed: 1
   healthBar: {fileID: 1278512921498599606}
 --- !u!50 &5060604463027239730

@@ -3036,15 +3036,15 @@ MonoBehaviour:
     units:
     - unitName: Medieval Swordman
       prefab: {fileID: 585359228010224065, guid: 07c2daf15b93cd344a29a70a825e79c0, type: 3}
-      goldCost: 140
+      goldCost: 120
       trainTime: 2
     - unitName: Medieval Archer
       prefab: {fileID: 585359228010224065, guid: 1a79983bb9715034ab88fba95971dd4c, type: 3}
-      goldCost: 180
+      goldCost: 160
       trainTime: 3
     - unitName: Medieval Magic Swordman
       prefab: {fileID: 585359228010224065, guid: 5d62a925faeff904baa41646b2f83a3e, type: 3}
-      goldCost: 250
+      goldCost: 220
       trainTime: 4
     evolveExpCost: 0
     meteorExpCost: 500
@@ -7247,7 +7247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: gold
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6153959808956277759, guid: 7acdb8901c70b264894d3026f7acf1cd, type: 3}
       propertyPath: expText

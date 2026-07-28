@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4955d8e74a453414f8e315aa0ef8567f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretAttackBox
-  attackRange: 6
+  attackRange: 9
   attackCooldown: 0.6
   damage: 10
   animator: {fileID: 4229927407010587649}

@@ -3026,7 +3026,7 @@ MonoBehaviour:
       trainTime: 2
     - unitName: Skeleton
       prefab: {fileID: 585359228010224065, guid: a99f34d940eaf0b4a94927aa51162aef, type: 3}
-      goldCost: 120
+      goldCost: 125
       trainTime: 3
     evolveExpCost: 500
     meteorExpCost: 250
@@ -3573,6 +3573,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5748764323555348553, guid: 5ed102c0c2a60ad4882617a93b675dc8, type: 3}
   m_PrefabInstance: {fileID: 4626189011333493241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1192465188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8008581780703457843, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+  m_PrefabInstance: {fileID: 4467556759526142929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &1206284878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9111432918403796206, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
@@ -5238,7 +5249,7 @@ MonoBehaviour:
     spawnInterval: 40
     spawnAtStart: 0
     currentTimer: 0
-  - unitName: Demon
+  - unitName: Demon (Boss)
     enemyPrefab: {fileID: 1492826417063611431, guid: 8c8197819453f9f428d2ffb8c8680dd3, type: 3}
     spawnInterval: 200
     spawnAtStart: 0
@@ -6404,6 +6415,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2855065662281589590, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2909672197895190992, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6692,6 +6707,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6916894766212130869, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_Name
+      value: Turret_Image_Pictures
+      objectReference: {fileID: 0}
     - target: {fileID: 7247338126990598475, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6716,6 +6735,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 798795696}
+    - target: {fileID: 8008581780703457843, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6632760482525581287, guid: 00e43469d2994c24f9649eb50ce327bc, type: 3}
+    - target: {fileID: 8425380990913840738, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.5679
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425380990913840738, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8656183627048889945, guid: 90e46d6245938ab43af7860fa77d0ae2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1
@@ -7105,6 +7136,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
+      propertyPath: turretEraBannerImage
+      value: 
+      objectReference: {fileID: 1192465188}
+    - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7133,9 +7168,17 @@ PrefabInstance:
       value: Medieval
       objectReference: {fileID: 0}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
+      propertyPath: turretEras.Array.data[0].turretBannerSprite
+      value: 
+      objectReference: {fileID: 2906378314632328010, guid: c6fe894428d99f1439320920cff8a407, type: 3}
+    - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[0].turrets.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
+      propertyPath: turretEras.Array.data[1].turretBannerSprite
+      value: 
+      objectReference: {fileID: -6632760482525581287, guid: 00e43469d2994c24f9649eb50ce327bc, type: 3}
     - target: {fileID: 7336065627542362806, guid: 680f07b40ef8c4d44bba6154597b6e8d, type: 3}
       propertyPath: turretEras.Array.data[1].turrets.Array.size
       value: 2

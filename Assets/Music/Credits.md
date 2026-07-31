@@ -4,7 +4,7 @@ This project uses royalty-free audio tracks and sound effects licensed under the
 
 ### Background Music
 * **Gameplay Background Music:** "War Game" by [Pavel Bekirov (PaulYudin)](https://pixabay.com) via [Pixabay](https://pixabay.com/)
-* **Main Menu Background Music:** "Ambient Soundscape" by [Alex Morgan](https://pixabay.com) via [Pixabay](https://pixabay.com/)
+* **Main Menu Background Music:** "Fantasy Adventure Quest" by [Alex Morgan](https://pixabay.com) via [Pixabay](https://pixabay.com/)
 
 ### UI Sound Effects
 * **Button Interaction SFX:** Sound Effect by [ksjsbwuil](https://pixabay.com/users/ksjsbwuil-50402086/) via [Pixabay](https://pixabay.com/)

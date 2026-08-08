@@ -7,7 +7,7 @@
 
 F4C Opossum is a classic 2D side-scrolling strategy and base-defence game inspired by the mechanics of **Age of War**. Players are challenged to balance their resources, deploy tactical units, construct defensive turrets, evolve through different eras, and use special abilities to destroy the enemy base before their own falls.
 
-Built using **Unity and C#**, this project was developed during our **NUS Orbital 2026**, where we focused on both game development and applying software engineering practices such as object-oriented programming(OOP), code refactoring, automated testing, and version control.
+Built using **Unity and C#**, this project was developed as part of **NUS Orbital 2026**, with a focus on both game development and applying software engineering practices such as object-oriented programming (OOP), code refactoring, automated testing, and version control.
 
 ---
 
@@ -84,8 +84,6 @@ Evolution introduces:
 
 The game's interface dynamically updates when the player's era changes, allowing the same action bar to represent the units and turrets available in the current era.
 
-<!-- SCREENSHOT PLACEHOLDER: Insert two screenshots showing the different eras, or one screenshot immediately after evolving -->
-
 #### Era 1 UI Bar
 ![Era 1 Evolution UI](https://github.com/user-attachments/assets/9ab81bc5-9b7f-4f6e-8af1-05b94341a494)
 #### Era 2 UI Bar
@@ -108,11 +106,11 @@ Because the same EXP is required for era progression, players must decide whethe
 
 The game is designed primarily for desktop browsers and is controlled using the mouse.
 
-| Action | Control | In Game Icon |
-|--------------------|------------------|------|
+| Action | Control | Visual Reference |
+|-----|-----|-----|
 | **Train Unit** | Left-click a unit button | <img src="https://github.com/user-attachments/assets/e81f7192-ecf0-48ad-9029-915226515f68" width="400" alt="Training Units Icon"> |
-| **Build Turret Holder** | Left-click Turret Holder Button | <img src="https://github.com/user-attachments/assets/d7126d23-8fa5-48a7-b410-d0421c5de7ba" height="180" alt="Build Holder Icon"> |
-| **Build Turret** | Select a turret, which will enter Build Mode, and click an available turret slot | <img src="https://github.com/user-attachments/assets/9754e493-915a-4801-a73f-83f719eecac1" width="400" alt="Build Mode Screen"> |
+| **Build Turret Holder** | Left-click the Turret Holder button to purchase an additional turret slot | <img src="https://github.com/user-attachments/assets/d7126d23-8fa5-48a7-b410-d0421c5de7ba" height="180" alt="Build Holder Icon"> |
+| **Build Turret** | Select a turret to enter Build Mode, then click an available turret slot | <img src="https://github.com/user-attachments/assets/9754e493-915a-4801-a73f-83f719eecac1" width="400" alt="Build Mode Screen"> |
 | **Sell Turret** | Enter Sell Mode and select the turret to sell | <img src="https://github.com/user-attachments/assets/1f23ea19-2220-448d-972e-60730ce3adf9" width="400" alt="Sell Mode Screen"> |
 | **Evolve Era** | Left-click the Evolve button | <img src="https://github.com/user-attachments/assets/69c7b900-62e6-44ba-8578-bc76707d2298" height="160" alt="Evolve Era Icon"> |
 | **Meteor Strike** | Left-click the Meteor Strike button | <img src="https://github.com/user-attachments/assets/e071b198-7987-4914-a54e-841aef02e824" height="160" alt="Meteor Strike Icon"> |
@@ -133,9 +131,9 @@ The game is designed primarily for desktop browsers and is controlled using the 
 - **Resource Economy:** Manage Gold and EXP earned passively and through combat.
 - **Era Progression:** Spend EXP to advance through eras and unlock stronger units and defences.
 - **Turret Management:** Purchase turret slots, construct different turret types, and sell existing turrets for partial refunds.
-- **Meteor Strike:** Spend EXP on a powerful battlefield-wide special ability.
+- **Meteor Strike:** Spend EXP to unleash a powerful special ability against enemy units across the battlefield.
 - **Dynamic Gameplay UI:** Unit, turret, cost, and era information dynamically changes according to the current game state.
-- **Enemy Progression:** Enemy units become increasingly challenging as the battle progresses (the release of the boss).
+- **Enemy Progression:** Enemy units become increasingly challenging as the battle progresses, culminating in the release of a powerful boss unit.
 - **Camera Controls:** Navigate across and zoom into the battlefield using the mouse.
 
 ---
@@ -146,7 +144,7 @@ Beyond implementing gameplay features, the project was also used to explore soft
 
 ### Object-Oriented Design & Refactoring
 
-Gameplay responsibilities were reorganised into dedicated classes instead of concentrating unrelated behaviour within large scripts. This improved code readability, maintainability, and made individual systems easier to test.
+Gameplay responsibilities were reorganised into dedicated classes instead of concentrating unrelated behaviour within large scripts. This improved code readability and maintainability while making individual systems easier to test.
 
 ### :robot: Automated Testing
 
@@ -154,9 +152,10 @@ Automated tests were introduced across multiple levels, including:
 
 - Unit testing
 - Integration testing
-- System testing (We chose not to do so since we would be doing system testing when fine-tuning unit interactions either way)
 
 Testing was used to validate key systems, including health and damage calculations, the resource economy, unit spawning, cooldowns, and interactions between gameplay components.
+
+System testing was performed manually alongside gameplay balancing and refinement, as many full-game interactions were more effectively evaluated through playtesting.
 
 ### :balance_scale::link: Version Control
 
@@ -188,7 +187,7 @@ For the complete software engineering discussion and testing documentation, see 
 
 2. Open **Unity Hub** and select **Add project from disk**.
 
-3. Navigate to the cloned repository and open the project using the appropriate **Unity 6 / 6000.x** version.
+3. Navigate to the cloned repository and open the project using the appropriate **Unity 6 / 6000.x** version (version used: **6000.4.8f1**).
 
 4. Open the main game scene from the Unity Project window.
 
@@ -231,8 +230,8 @@ External artwork, music, sound effects, and other assets used within the project
 **Engine:** Unity (Editor Version: 6000.4.8f1)  
 **Language:** C#  
 
-**Team Members:**  
-:bust_in_silhouette: Wong Bo Xi Filbert — [LinkedIn](https://www.linkedin.com/in/wong-bo-xi-filbert/)  
-:bust_in_silhouette: Li JianXi — [LinkedIn](https://www.linkedin.com/in/li-jianxi/)
+### Team Members
+:bust_in_silhouette: **Wong Bo Xi Filbert** — [LinkedIn](https://www.linkedin.com/in/wong-bo-xi-filbert/)  
+:bust_in_silhouette: **Li JianXi** — [LinkedIn](https://www.linkedin.com/in/li-jianxi/)
 
 For the complete project documentation, design decisions, testing strategy, challenges, user testing, and development process, refer to the **[Full README Report](https://drive.google.com/file/d/1Ps6pWv2cOZs-fLn4H9zeP-FZC-D_YGg0/view?usp=sharing)**.

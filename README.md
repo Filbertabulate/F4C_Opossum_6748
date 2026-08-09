@@ -9,6 +9,12 @@ F4C Opossum is a classic 2D side-scrolling strategy and base-defence game inspir
 
 Built using **Unity and C#**, this project was developed as part of **NUS Orbital 2026**, with a focus on both game development and applying software engineering practices such as object-oriented programming (OOP), code refactoring, automated testing, and version control.
 
+### :bar_chart: Game Statistics
+
+Want to compare units, enemies, turrets, and abilities in more detail?
+
+[**View the Unit, Enemy & Turret Stats →**](FinalSubmission/Units_Statistics_Guide/Game_Statistics.md)
+
 ---
 
 # :book: Project Resources

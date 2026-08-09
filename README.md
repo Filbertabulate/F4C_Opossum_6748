@@ -21,12 +21,12 @@ Want to compare units, enemies, turrets, and abilities in more detail?
 
 For a more detailed breakdown of the project's development, design decisions, testing, and implementation, refer to the resources below:
 
-- :notebook: [Full README Report](https://drive.google.com/file/d/1Ps6pWv2cOZs-fLn4H9zeP-FZC-D_YGg0/view?usp=sharing)
+- :notebook: [Full README Report](https://drive.google.com/file/d/1TYmiiiV_vizJqK89_bU-nDQw_7TRR9Bt/view?usp=sharing)
 - :framed_picture: [Project Poster](https://drive.google.com/file/d/1AYxXTOcizSNwgdR0DNb5BQjg6fUXYryB/view?usp=sharing)
 - :film_strip: [Gameplay Video — Milestone 2](https://drive.google.com/file/d/1BHaVYKhp4yezxNoT85e6jFuCWHc53cf7/view?usp=sharing)
 - :date: [Project Log](https://docs.google.com/spreadsheets/d/1UeVmOn5maOyk0yjt6T7f1WFaAEKY951M/edit?usp=sharing&ouid=107132362133645130135&rtpof=true&sd=true)
 
-> **Note:** The current poster and gameplay video were created primarily for Milestone 2. The playable WebGL build and Full README Report reflect the newer Milestone 3 implementation.
+> **Note:** The current poster and gameplay video were created primarily for Milestone 2. The playable WebGL build and Full README Report reflect the newer Milestone 3 implementation, with additions from the Milestone 3 feedback.
 
 ---
 

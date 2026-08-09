@@ -3028,6 +3028,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2564980986426078140, guid: 9ee8cbbe7679d71409fdcdf9b8697359, type: 3}
+      propertyPath: statsUrl
+      value: https://github.com/Filbertabulate/F4C_Opossum_6748/blob/main/Final_Submission_Resources/Units_Statistics_Guide/Game_Statistics.md
+      objectReference: {fileID: 0}
     - target: {fileID: 5085872391705086381, guid: 9ee8cbbe7679d71409fdcdf9b8697359, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

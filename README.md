@@ -13,7 +13,7 @@ Built using **Unity and C#**, this project was developed as part of **NUS Orbita
 
 Want to compare units, enemies, turrets, and abilities in more detail?
 
-[**View the Unit, Enemy & Turret Stats →**](FinalSubmission/Units_Statistics_Guide/Game_Statistics.md)
+[**View the Unit, Enemy & Turret Stats →**](Final_Submission_Resources/Units_Statistics_Guide/Game_Statistics.md)
 
 ---
 

@@ -1,19 +1,16 @@
 # Normalise text files
 * text=auto
-
 # This is for tracking the Git LFS (Large File Storage)
 *.psb filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
-
 # C# source files
 *.cs text eol=lf
-
 # Unity YAML assets
 *.meta text eol=lf
 *.prefab text eol=lf
 *.unity text eol=lf
 *.asset text eol=lf
-
 # Documentation
 *.md text eol=lf
 *.txt text eol=lf
+Final_Submission_Resources/6748.png filter=lfs diff=lfs merge=lfs -text

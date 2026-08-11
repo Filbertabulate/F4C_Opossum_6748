@@ -65,16 +65,7 @@ public class AudioSettingsUI : MonoBehaviour
         // slider value into the AudioMixer.
         //
         // As a result, from researching online, it turns out that Audio volume is percived as logarithmic  based 10
-        // rather than linear. Therefore, we use:
-        //
-        //      dB = 20 * Log10(volume)
-        //
-        // Some examples are:
-        //      Slider = 1.0    -->   0 dB   -> Full volume
-        //      Slider = 0.5    -->  -6 dB
-        //      Slider = 0.1    --> -20 dB
-        //      Slider = 0.01   --> -40 dB
-        //      Slider = 0.0001 --> -80 dB  -> Effectively silent
+        // rather than linear. Therefore, we use the formula of "dB = 20 * Log10(volume)".
         //
         // This allows the 0 to 1 slider to behave naturally while giving the AudioMixer the decibel value that it 
         // expects.

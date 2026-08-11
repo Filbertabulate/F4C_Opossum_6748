@@ -10,10 +10,7 @@ using UnityEngine;
 // The text moves upwards, fades out, and destroys itself.
 public class FloatingGoldText : MonoBehaviour
 {
-    // ===========================
     // UI References
-    // ===========================
-
     [Header("UI References")]
 
     // TextMeshPro text used to display the refunded gold amount.
@@ -24,10 +21,7 @@ public class FloatingGoldText : MonoBehaviour
     [SerializeField]
     private CanvasGroup canvasGroup;
 
-    // ===========================
     // Animation Configuration
-    // ===========================
-
     [Header("Animation Configuration")]
 
     // How far upwards the popup moves in UI units.

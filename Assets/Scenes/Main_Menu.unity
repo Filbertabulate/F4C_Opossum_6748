@@ -2629,6 +2629,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610660900825278835, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610660900825278835, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610660900825278835, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610660900825278835, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 844691576}
@@ -2747,6 +2759,18 @@ PrefabInstance:
     - target: {fileID: 7719364721533860984, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297829407380173413, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297829407380173413, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297829407380173413, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 8297829407380173413, guid: 44846880f7da78045996fdc880f4e58e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3087,6 +3111,11 @@ PrefabInstance:
     - target: {fileID: 5085872391705086381, guid: 9ee8cbbe7679d71409fdcdf9b8697359, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318598691500724156, guid: 9ee8cbbe7679d71409fdcdf9b8697359, type: 3}
+      propertyPath: m_text
+      value: Need more details? Click here to view the full <link="stats"><color=#2980D9><u><b>Unit
+        & Turret Stats</b></u></color></link>.
       objectReference: {fileID: 0}
     - target: {fileID: 6548009280339723619, guid: 9ee8cbbe7679d71409fdcdf9b8697359, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
